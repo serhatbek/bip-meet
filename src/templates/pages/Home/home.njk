@@ -1,0 +1,13 @@
+{% extends "includes/layout/layout.njk" %}
+{% import "includes/components/Button/button.njk" as Button %}
+
+{% block content %}
+  <div class="section-banner">
+    <h1>Banner</h1>
+    {{Button.item(
+      class='download',
+      text='İNDİR',
+      href='/'
+    )}}
+  </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+.button {
+  min-width: 147px;
+  height: 32px;
+  font-size: 12px;
+  padding: 14px 0;
+  background-color: $primary-blue;
+  color: $text-white;
+  border: none;
+  border-radius: 16px;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+
+  &.small {
+    min-width: 106px;
+    height: 32px;
+    padding: 9px 0;
+  }
+
+  &.join {
+    color: $text-white;
+  }
+
+  &.large {
+    min-width: 208px;
+    height: 60px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 13px 0;
+    border-radius: 30px;
+  }
+
+  &.active {
+    color: $text-white;
+    background-color: $primary-dark-blue-light-1;
+    border: 2px solid $primary-blue;
+  }
+
+  &.download {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $primary-blue;
+    padding: 0;
+    background: none;
+    min-width: auto;
+  }
+
+  &--v2 {
+    color: $primary-blue;
+    background: transparent;
+    border: 1px solid $primary-blue;
+  }
+}
