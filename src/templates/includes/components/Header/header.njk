@@ -1,5 +1,26 @@
 {% import "includes/components/Button/button.njk" as Button %}
 
+{% set navItems = [
+  {
+    text:'Platform',
+    icon:'../assets/images/icons-arrow.png',
+    children: ['Online Konferans', 'Toplantı Kaydetme', 'Anlık Mesajlaşma', 'Anket', 'Moderasyon & Co-Host yetkileri', 'Ara Oda Oluşturma', 'Beyaz Tahta']
+  },
+  {
+    text:'Kurumsal Çözümler',
+    icon:'../assets/images/icons-arrow.png',
+    children: ['İşte Suit', 'API VE SDK', 'Sektörler & Marka İşbirlikleri & Testimonials (Referanslar)', 'Toptan (Wholesale)']
+  },
+  {
+    text:'Fiyatlandırma'
+  },
+  {
+    text:'Kaynaklar',
+    icon:'../assets/images/icons-arrow.png',
+    children: ['Blog', 'Yardım', 'How 2 Videos']
+  }
+] %}
+
 <div class="container">
   <a class='header__logo' href="/">
     <figure>
@@ -7,7 +28,28 @@
     </figure>
   </a>
 
-  <nav></nav>
+  <nav>
+    <ul class="menu">
+      {% for item in navItems %}
+        <li>
+          <a href="/">{{ item.text }}</a>
+          {% if item.icon %}
+            <figure><img src="{{ item.icon }}"></figure>
+          {% endif %}
+
+          {% if item.children %}
+            <ul class="submenu">
+              {% for item in item.children %}
+                <li>
+                  <a href="/">{{ item }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
 
   <div>
     {{Button.item(
