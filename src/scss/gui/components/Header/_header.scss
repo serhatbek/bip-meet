@@ -1,0 +1,22 @@
+.header {
+  $self: &;
+  background-color: $primary-dark-blue-level-0;
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    #{ $self }__logo {
+      figure {
+        max-width: 174px;
+      }
+    }
+
+    div {
+      .button:nth-child(2) {
+        margin-right: 18px;
+        margin-left: 28px;
+      }
+    }
+  }
+}

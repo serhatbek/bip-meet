@@ -1,3 +1,31 @@
+{% import "includes/components/Button/button.njk" as Button %}
+
 <div class="container">
-  <a class='header__logo' href="/">BipMeet</a>
+  <a class='header__logo' href="/">
+    <figure>
+      <img src="../assets/images/header-elements-logo.png" alt="Bipmeet Logo">
+    </figure>
+  </a>
+
+  <nav></nav>
+
+  <div>
+    {{Button.item(
+        class='download',
+        text='İNDİR'
+      )}}
+
+    {{Button.item(
+        class='small join',
+        text='Toplantıya Katıl',
+        href='/',
+        buttonV2=true
+      )}}
+
+    {{Button.item(
+        class='small',
+        text='Giriş Yap',
+        href='/'
+      )}}
+  </div>
 </div>
