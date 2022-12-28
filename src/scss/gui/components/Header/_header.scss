@@ -28,7 +28,8 @@
           transition: border 250ms ease-in-out;
           box-sizing: border-box;
 
-          &:hover {
+          &:hover,
+          &.active {
             border-bottom: 2px solid $primary-blue;
           }
 
@@ -72,11 +73,9 @@
           border-radius: 10px;
           padding: 8px 18px 13px 32px;
           left: 0;
-          display: grid;
-          grid-template-columns: 1fr;
+          display: none;
 
           > li {
-            // display: block;
             padding: 8px 0;
 
             a {
@@ -85,6 +84,10 @@
                 color: $primary-blue;
               }
             }
+          }
+
+          &.active {
+            display: block;
           }
         }
       }
