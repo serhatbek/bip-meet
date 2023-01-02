@@ -60,7 +60,7 @@ mobileMediaQuery.addEventListener('change', checkMobileQuery);
 checkMobileQuery(mobileMediaQuery);
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 0) {
+  if (header.classList.contains('sticky') && window.scrollY > 140) {
     header.classList.add('header--sticky');
   } else {
     header.classList.remove('header--sticky');

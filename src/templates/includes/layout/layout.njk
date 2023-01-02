@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
   </head>
   <body>
-    <header class='header'>
+    <header class='header {% if HeaderClass == 'sticky' %} sticky{% endif %}'>
       {% include "includes/components/Header/header.njk" %}
     </header>
 
