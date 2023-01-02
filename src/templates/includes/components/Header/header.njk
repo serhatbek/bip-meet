@@ -4,12 +4,60 @@
   {
     text:'Platform',
     icon:'../assets/images/icons-arrow.png',
-    children: ['Online Konferans', 'Toplantı Kaydetme', 'Anlık Mesajlaşma', 'Anket', 'Moderasyon & Co-Host yetkileri', 'Ara Oda Oluşturma', 'Beyaz Tahta']
+    class:'js-dropdown-btn',
+    children: [
+    {
+      title:'Online Konferans',
+      url:'/'
+    },
+    {
+      title:'Toplantı Kaydetme',
+      url:'/'
+    },
+    {
+      title:'Anlık Mesajlaşma',
+      url:'/'
+    },
+     {
+      title:'Anket',
+      url:'/'
+    },
+    {
+      title:'Moderasyon & Co-Host yetkileri',
+      url:'/'
+    },
+    {
+      title:'Ara Oda Oluşturma',
+      url:'/'
+    },
+    {
+      title:'Beyaz Tahta',
+      url:'/'
+    }
+    ]
   },
   {
     text:'Kurumsal Çözümler',
     icon:'../assets/images/icons-arrow.png',
-    children: ['İşte Suit', 'API VE SDK', 'Sektörler & Marka İşbirlikleri & Testimonials (Referanslar)', 'Toptan (Wholesale)']
+    class:'js-dropdown-btn',
+    children: [
+    {
+      title:'İşte Suit',
+      url:'/'
+    },
+    {
+      title:'API VE SDK',
+      url:'/'
+    },
+    {
+      title:'Sektörler & Marka İşbirlikleri & Testimonials (Referanslar)',
+      url:'/'
+    },
+     {
+      title:'Toptan (Wholesale)',
+      url:'/'
+    }
+    ]
   },
   {
     text:'Fiyatlandırma'
@@ -17,7 +65,21 @@
   {
     text:'Kaynaklar',
     icon:'../assets/images/icons-arrow.png',
-    children: ['Blog', 'Yardım', 'How 2 Videos']
+    class:'js-dropdown-btn',
+    children: [
+    {
+      title:'Blog',
+      url:'/'
+    },
+    {
+      title:'Yardım',
+      url:'/'
+    },
+    {
+      title:'How 2 Videos',
+      url:'/'
+    }
+    ]
   }
 ] %}
 
@@ -28,46 +90,52 @@
     </figure>
   </a>
 
+  <figure class="header__menu-toggle">
+    <img src="../assets/images/icons-menu-open.png">
+  </figure>
+
   <nav>
-    <ul class="menu">
+    <div class="menu">
       {% for item in navItems %}
-        <li>
-          <a href="/">{{ item.text }}</a>
+        <div class="{% if item.class -%} {{ item.class }}{% else %} {% endif -%}">
           {% if item.icon %}
+            {{ item.text }}
             <figure><img src="{{ item.icon }}"></figure>
+          {% else %}
+            <a href="/">{{ item.text }}</a>
           {% endif %}
 
           {% if item.children %}
-            <ul class="submenu">
+            <ul class="dropdown">
               {% for item in item.children %}
                 <li>
-                  <a href="/">{{ item }}</a>
+                  <a href="{{ item.url }}">{{ item.title }}</a>
                 </li>
               {% endfor %}
             </ul>
           {% endif %}
-        </li>
+        </div>
       {% endfor %}
-    </ul>
-  </nav>
+    </div>
 
-  <div>
-    {{Button.item(
-        class='download',
+    <div class="header__actions">
+      {{Button.item(
+        class='button--download',
         text='İNDİR'
       )}}
 
-    {{Button.item(
-        class='small join',
+      {{Button.item(
+        class='button--small button--join',
         text='Toplantıya Katıl',
         href='/',
         buttonV2=true
       )}}
 
-    {{Button.item(
-        class='small',
+      {{Button.item(
+        class='button--small',
         text='Giriş Yap',
         href='/'
       )}}
-  </div>
+    </div>
+  </nav>
 </div>
