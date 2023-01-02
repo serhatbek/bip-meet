@@ -65,6 +65,44 @@
 } %}
 
 <div class="container">
-  <div class="footer__top"></div>
-  <div class="footer__bottom"></div>
+  <div class="footer__top">
+    <div class="footer__top__info">
+      <figure>
+        <img src="{{ footerItems.logo }}" alt="Bip Meet Logo">
+      </figure>
+      <p>{{ footerItems.desc }}</p>
+    </div>
+
+    <div class="footer__top__links">
+      <ul>
+        {% for item in footerItems.linkListOne %}
+          <li>
+            <a href="{{ item.url }}">{{item.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <ul>
+        {% for item in footerItems.linkListTwo %}
+          <li>
+            <a href="{{ item.url }}">{{item.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <ul>
+        {% for item in footerItems.linkListThree %}
+          <li>
+            <a href="{{ item.url }}">{{item.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div>
+      {% for item in footerItems.linkListFour %}
+        <a href="{{ item.url }}">{{item.title}}</a>
+      {% endfor %}
+    </div>
+    <p>{{ footerItems.rights }}</p>
+  </div>
 </div>
