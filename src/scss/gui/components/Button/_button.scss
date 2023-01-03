@@ -12,6 +12,11 @@
   display: inline-block;
   cursor: pointer;
   letter-spacing: normal;
+  box-sizing: border-box;
+
+  // &--link {
+  //   padding: 12px 0;
+  // }
 
   &--xs {
     min-width: 106px;
@@ -19,10 +24,13 @@
     padding: 9px 0;
   }
 
+  &--sm.button--link {
+    padding: 12px 0;
+  }
+
   &--sm {
     min-width: 147px;
     height: 42px;
-    padding: 8px 0;
     border-radius: 21px;
   }
 

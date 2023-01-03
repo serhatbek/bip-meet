@@ -3,6 +3,10 @@
   justify-content: space-between;
   align-items: center;
 
+  @include laptop {
+    flex-direction: column;
+  }
+
   &__content {
     max-width: 568px;
 
@@ -19,6 +23,12 @@
       line-height: 1.5;
       margin-bottom: 30px;
       font-weight: 500;
+    }
+  }
+
+  &__img {
+    @include laptop {
+      order: 1;
     }
   }
 }

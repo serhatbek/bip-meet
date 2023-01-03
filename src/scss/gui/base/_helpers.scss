@@ -3,3 +3,43 @@
   padding: 0 16px;
   margin: 0 auto;
 }
+
+.overflowHidden {
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-pagination {
+  bottom: 20px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  border: 1px solid $text-white;
+  background: transparent;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  border: 1px solid $primary-blue;
+  background: $primary-blue;
+}
+
+.section {
+  &__title {
+  }
+
+  &__desc {
+  }
+}

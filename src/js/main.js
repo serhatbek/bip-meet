@@ -5,6 +5,7 @@ const menuToggleIcon = document.querySelector('.header__menu-toggle img');
 const header = document.querySelector('.header');
 const headerNav = document.querySelector('nav');
 const headerBtns = document.querySelectorAll('.button--xs');
+const body = document.querySelector('body');
 
 if (dropdownItems) {
   window.addEventListener('click', (e) => {
@@ -21,9 +22,11 @@ const toggleMenu = () => {
     header.classList.remove('active');
     menuToggleIcon.src = '../assets/images/icons-menu-open.png';
     headerBtns.forEach((btn) => btn.classList.remove('button--lg'));
+    body.classList.remove('overflowHidden');
   } else {
     headerNav.classList.add('active');
     header.classList.add('active');
+    body.classList.add('overflowHidden');
     menuToggleIcon.src = '../assets/images/icons-menu-close.png';
     headerBtns.forEach((btn) => btn.classList.add('button--lg'));
   }
@@ -65,4 +68,22 @@ window.addEventListener('scroll', () => {
   } else {
     header.classList.remove('header--sticky');
   }
+});
+
+//******************* */
+
+var swiper = new Swiper('.swiper-banner', {
+  spaceBetween: 300,
+  speed: 1100,
+  parallax: true,
+  loop: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  autoplay: {
+    delay: 7500,
+    disableOnInteraction: false,
+  },
 });

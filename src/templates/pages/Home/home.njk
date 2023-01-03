@@ -9,20 +9,36 @@
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
     btnText: 'Toplantıyı Başlat',
     img: 'https://source.unsplash.com/random/450x415'
+  }, {
+    heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    btnText: 'Toplantıyı Başlat',
+    img: 'https://source.unsplash.com/random/450x415'
+  }, {
+    heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    btnText: 'Toplantıyı Başlat',
+    img: 'https://source.unsplash.com/random/450x415'
   }
 ] %}
 
 {% block content %}
-  <div class="section-banner">
+  <section class="section-banner">
     <div class="container">
-      {% for item in bannerItems %}
-        {% call BannerCard.item(title = item.heading, desc = item.desc, img = item.img) %}
-        {{Button.item(
-          text=item.btnText,
-          class='button--sm'
-        )}}
-        {% endcall %}
-      {% endfor %}
+      <div class="swiper swiper-banner">
+        <div class="swiper-wrapper">
+          {% for item in bannerItems %}
+            {% call BannerCard.item(title = item.heading, desc = item.desc, img = item.img, class='swiper-slide') %}
+            {{Button.item(
+              text=item.btnText,
+              class='button--sm',
+              href='/'
+            )}}
+            {% endcall %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-  </div>
+  </section>
 {% endblock %}
