@@ -4,7 +4,7 @@ const menuToggleBtn = document.querySelector('.header__menu-toggle');
 const menuToggleIcon = document.querySelector('.header__menu-toggle img');
 const header = document.querySelector('.header');
 const headerNav = document.querySelector('nav');
-const headerBtns = document.querySelectorAll('.button--small');
+const headerBtns = document.querySelectorAll('.button--xs');
 
 if (dropdownItems) {
   window.addEventListener('click', (e) => {
@@ -20,12 +20,12 @@ const toggleMenu = () => {
     headerNav.classList.remove('active');
     header.classList.remove('active');
     menuToggleIcon.src = '../assets/images/icons-menu-open.png';
-    headerBtns.forEach((btn) => btn.classList.remove('button--large'));
+    headerBtns.forEach((btn) => btn.classList.remove('button--lg'));
   } else {
     headerNav.classList.add('active');
     header.classList.add('active');
     menuToggleIcon.src = '../assets/images/icons-menu-close.png';
-    headerBtns.forEach((btn) => btn.classList.add('button--large'));
+    headerBtns.forEach((btn) => btn.classList.add('button--lg'));
   }
 };
 

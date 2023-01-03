@@ -1,0 +1,24 @@
+.banner-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__content {
+    max-width: 568px;
+
+    h1 {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: $text-white;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: $text-white;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+  }
+}

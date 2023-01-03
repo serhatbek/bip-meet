@@ -1,8 +1,28 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Button/button.njk" as Button %}
+{% import "includes/components/Card/bannerCard.njk" as BannerCard with context %}
 
 {# {% set HeaderClass = 'sticky' %} #}
+{% set bannerItems = [
+  {
+    heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    btnText: 'Toplantıyı Başlat',
+    img: 'https://source.unsplash.com/random/450x415'
+  }
+] %}
 
 {% block content %}
-  <div class="section-banner"></div>
+  <div class="section-banner">
+    <div class="container">
+      {% for item in bannerItems %}
+        {% call BannerCard.item(title = item.heading, desc = item.desc, img = item.img) %}
+        {{Button.item(
+          text=item.btnText,
+          class='button--sm'
+        )}}
+        {% endcall %}
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
