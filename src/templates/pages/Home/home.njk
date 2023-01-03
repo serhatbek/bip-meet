@@ -7,17 +7,19 @@
   {
     heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
-    btnText: 'Toplantıyı Başlat',
+    btnTextOne: 'Toplantıyı Başlat',
+    btnTextTwo: 'Toplantıyı Katıl',
     img: 'https://source.unsplash.com/random/450x415'
   }, {
     heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
-    btnText: 'Toplantıyı Başlat',
+    btnTextOne: 'Toplantıyı Başlat',
     img: 'https://source.unsplash.com/random/450x415'
   }, {
     heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
-    btnText: 'Toplantıyı Başlat',
+    btnTextOne: 'Toplantıyı Başlat',
+    btnTextTwo: 'Toplantıyı Katıl',
     img: 'https://source.unsplash.com/random/450x415'
   }
 ] %}
@@ -30,10 +32,18 @@
           {% for item in bannerItems %}
             {% call BannerCard.item(title = item.heading, desc = item.desc, img = item.img, class='swiper-slide') %}
             {{Button.item(
-              text=item.btnText,
+              text=item.btnTextOne,
               class='button--sm',
               href='/'
             )}}
+
+            {% if item.btnTextTwo %}
+              {{Button.item(
+              text=item.btnTextTwo,
+              class='button--sm button--slider',
+              href='/'
+            )}}
+            {% endif %}
             {% endcall %}
           {% endfor %}
         </div>

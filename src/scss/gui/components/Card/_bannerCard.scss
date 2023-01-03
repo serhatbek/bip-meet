@@ -5,10 +5,17 @@
 
   @include laptop {
     flex-direction: column;
+    padding-bottom: 66px;
   }
 
   &__content {
     max-width: 568px;
+    display: flex;
+    flex-direction: column;
+
+    @include laptop {
+      order: 2;
+    }
 
     h1 {
       font-size: 40px;
@@ -16,6 +23,10 @@
       line-height: 1.2;
       color: $text-white;
       margin-bottom: 15px;
+
+      @include phone {
+        font-size: 34px;
+      }
     }
 
     p {
@@ -24,11 +35,25 @@
       margin-bottom: 30px;
       font-weight: 500;
     }
+
+    > div {
+      @include laptop {
+        margin-bottom: 32px;
+      }
+      > a:first-child {
+        margin-right: 23px;
+      }
+    }
   }
 
   &__img {
+    img {
+      border-radius: 12px;
+      box-shadow: 0 5px 13px 0 rgba(32, 46, 62, 0.72);
+    }
     @include laptop {
       order: 1;
+      margin-bottom: 24px;
     }
   }
 }
