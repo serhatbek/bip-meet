@@ -1,6 +1,7 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Card/banner-card.njk" as BannerCard with context %}
+{% import "includes/components/Card/offer-card.njk" as OfferCard %}
 
 {# {% set HeaderClass = 'sticky' %} #}
 {% set bannerItems = [
@@ -54,7 +55,7 @@
 ] %}
 
 {% block content %}
-  <section class="section-banner">
+  <section class="section section-banner">
     <div class="container">
       <div class="swiper swiper-banner">
         <div class="swiper-wrapper">
@@ -78,6 +79,21 @@
         </div>
       </div>
       <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <section class="section section-offer">
+    <div class="container">
+      <h2 class='section__title'>BİP Meet’in Değer Teklifleri</h2>
+      <div class="box">
+        {% for item in offerCardItems %}
+          {{OfferCard.item(
+                title=item.title,
+                desc=item.desc,
+                img=item.img
+              )}}
+        {% endfor %}
+      </div>
     </div>
   </section>
 {% endblock %}

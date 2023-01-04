@@ -53,7 +53,6 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   line-height: normal;
-  background-color: $bg;
 }
 
 ol,
@@ -94,6 +93,6 @@ p {
   margin: 0;
 }
 
-img {
-  width: 100%;
-}
+// img {
+//   width: 100%;
+// }

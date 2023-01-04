@@ -1,0 +1,63 @@
+.offer-card {
+  display: flex;
+  max-width: 554px;
+  height: 172px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: $text-white;
+  transition: all 0.3s ease-in-out;
+
+  @include laptop {
+    max-width: 100%;
+  }
+
+  @include phone {
+    height: 106px;
+  }
+
+  &:hover {
+    background-color: $bg;
+    box-shadow: 0 4px 10px 0 rgba(32, 46, 62, 0.13);
+  }
+
+  &__content {
+    h3 {
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: bold;
+      margin-bottom: 8px;
+
+      @include phone {
+        font-size: 16px;
+        line-height: 1.13;
+      }
+    }
+
+    p {
+      @include phone {
+        font-size: 12px;
+        line-height: 1.13;
+      }
+    }
+  }
+
+  > figure {
+    max-width: 146px;
+    max-height: 146px;
+    margin-right: 22px;
+
+    @include phone {
+      min-width: 91px;
+      min-height: 91px;
+    }
+
+    > img {
+      border-radius: 8px;
+
+      @include phone {
+        width: 100%;
+      }
+    }
+  }
+}

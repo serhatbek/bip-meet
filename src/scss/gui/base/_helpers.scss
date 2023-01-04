@@ -38,8 +38,13 @@
 
 .section {
   &__title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: $primary-dark-blue-level-0;
+    margin-bottom: 46px;
   }
 
-  &__desc {
-  }
+  // &__desc {
+  // }
 }

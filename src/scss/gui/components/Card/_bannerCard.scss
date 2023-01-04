@@ -47,17 +47,18 @@
   }
 
   &__img {
-    // max-width: 594px;
+    max-width: 594px;
     img {
       border-radius: 12px;
       box-shadow: 0 5px 13px 0 rgba(32, 46, 62, 0.72);
+      width: 100%;
     }
     @include laptop {
       order: 1;
       margin-bottom: 24px;
     }
     @include phone {
-      // max-width: 360px;
+      max-width: 360px;
     }
   }
 }

@@ -4,4 +4,24 @@
   position: relative;
   padding-top: 171px;
   top: -148px;
+  margin-bottom: -148px;
+}
+
+.section-offer {
+  background-color: $bg;
+  padding-top: 78px;
+  padding-bottom: 30px;
+
+  .container {
+    .box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 24px;
+      column-gap: 26px;
+
+      @include laptop {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 }
