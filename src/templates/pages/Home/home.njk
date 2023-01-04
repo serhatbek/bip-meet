@@ -54,6 +54,91 @@
   }
 ] %}
 
+{% set featuresItems = {
+  tabButtons: [
+        {
+      text:'Online Konferans',
+      attr:'data-tab-target=conference'
+    },
+            {
+      text:'Toplantı Kaydetme',
+      attr:'data-tab-target=record'
+    },
+            {
+      text:'Anlık Mesajlaşma',
+      attr:'data-tab-target=instant'
+    },
+            {
+      text:'Anket',
+      attr:'data-tab-target=survey'
+    },
+            {
+      text:'Moderasyon Yetkileri',
+      attr:'data-tab-target=moderation'
+    },
+            {
+      text:'Ara Oda Oluşturma',
+      attr:'data-tab-target=breakout'
+    }
+  ],
+  tabItems: [
+    {
+      img:'https://source.unsplash.com/random/552x428',
+      tabContent: {
+        title:'Online Konferans',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        btnText:'',
+        btnUrl:'../assets/Conference/conference.html'
+      }
+    },
+        {
+      img:'https://source.unsplash.com/random/552x428',
+      tabContent: {
+        title:'Toplantı Kaydetme',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        btnText:'',
+        btnUrl:'../assets/Record/record-meeting.html'
+      }
+    },
+        {
+      img:'https://source.unsplash.com/random/552x428',
+      tabContent: {
+        title:'Anlık Mesajlaşma',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        btnText:'',
+        btnUrl:'../assets/Instant/instant-messaging.html'
+      }
+    },
+        {
+      img:'https://source.unsplash.com/random/552x428',
+      tabContent: {
+        title:'Anket',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        btnText:'',
+        btnUrl:'../assets/Survey/survey.html'
+      }
+    },
+    {
+      img:'https://source.unsplash.com/random/552x428',
+      tabContent: {
+        title:'Moderasyon Yetkileri',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        btnText:'',
+        btnUrl:'../assets/Moderation/moderation-auth.html'
+      }
+    },
+        {
+      img:'https://source.unsplash.com/random/552x428',
+      tabContent: {
+        title:'Ara Oda Oluşturma',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        btnText:'',
+        btnUrl:'../assets/Breakout/breakout-rooms.html'
+      }
+    }
+  ]
+} %}
+
 {% set sectorItems = {
   tabButtons: [
     {
