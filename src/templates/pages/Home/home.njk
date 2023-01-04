@@ -54,6 +54,86 @@
   }
 ] %}
 
+{% set featuresItems = {
+  tabButtons: [
+    {
+      text:'Kamu',
+      attr:'data-tab-target=public'
+    },
+        {
+      text:'Sağlık',
+      attr:'data-tab-target=health'
+    },
+        {
+      text:'Yerel Yönetim',
+      attr:'data-tab-target=gov'
+    },
+        {
+      text:'Kurumsal Firmalar',
+      attr:'data-tab-target=edu'
+    },
+        {
+      text:'Kamu',
+      attr:'data-tab-target=firm'
+    }
+  ],
+  tabContents: [
+    {
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Lorem ipsum dolor sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+    },
+        {
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Ipsum dolor sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+    },
+        {
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Dolor Lorem ipsum sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+    },
+        {
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Sit amet lorem ipsum dolor, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+    },
+        {
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Consectetur ipsum dolor sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+    }
+  ],
+    refTitle:'Bip Meet’i tercih edenler',
+    refDesc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+  refItems: [
+    {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76'
+    },
+        {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76'
+    },
+        {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76'
+    },
+        {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76'
+    },
+        {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76'
+    },
+        {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76'
+    }
+  ]
+} %}
+
 {% block content %}
   <section class="section section-banner">
     <div class="container">
@@ -96,4 +176,6 @@
       </div>
     </div>
   </section>
+
+  <section class="section section-features"></section>
 {% endblock %}

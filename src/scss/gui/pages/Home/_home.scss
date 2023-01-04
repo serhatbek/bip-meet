@@ -21,7 +21,14 @@
 
       @include laptop {
         grid-template-columns: 1fr;
+        justify-items: center;
       }
     }
   }
+}
+
+.section-features {
+  padding-top: 46px;
+  padding-bottom: 38px;
+  background-color: $bg;
 }
