@@ -48,8 +48,9 @@
     margin-right: 22px;
 
     @include phone {
-      min-width: 91px;
-      min-height: 91px;
+      max-width: 91px;
+      max-height: 91px;
+      width: 100%;
     }
 
     > img {

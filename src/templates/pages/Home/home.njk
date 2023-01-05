@@ -55,6 +55,7 @@
 ] %}
 
 {% set featuresItems = {
+  title:'Özellikler',
   tabButtons: [
         {
       text:'Online Konferans',
@@ -344,7 +345,7 @@
             {% if item.btnTextTwo %}
               {{Button.item(
               text=item.btnTextTwo,
-              class='button--sm button--slider',
+              class='button--sm',
               href='/'
             )}}
             {% endif %}
@@ -371,5 +372,7 @@
     </div>
   </section>
 
-  <section class="section section-features"></section>
+  <section class="section section-features">
+    <h2 class='section__title text-center'>{{ featuresItems.title }}</h2>
+  </section>
 {% endblock %}

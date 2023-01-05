@@ -90,24 +90,16 @@ var swiper = new Swiper('.swiper-banner', {
 
 //*************** */
 
-const sliderBtns = document.querySelectorAll('.button--slider');
 const bannerBtnContainer = document.querySelectorAll('.banner-card__btns');
 const bannerSliderQuery = window.matchMedia('(max-width: 992px)');
 
-if (sliderBtns) {
+if (bannerBtnContainer) {
   const checkBannerSliderQuery = (e) => {
     bannerBtnContainer.forEach((container) => {
-      // console.log('container length', container.children.length);
-      // console.log('container', container);
-      // console.log('Collection', container.HTMLCollection);
-      if (e.matches && container.children.length > 1) {
-        sliderBtns.forEach((btn) => {
-          btn.classList.add('button--v2', 'button--join');
-        });
+      if (e.matches && container.childElementCount >= 2) {
+        container.children[0].classList.add('button--v2', 'button--join');
       } else {
-        sliderBtns.forEach((btn) => {
-          btn.classList.remove('button--v2', 'button--join');
-        });
+        container.children[0].classList.remove('button--v2', 'button--join');
       }
     });
   };
