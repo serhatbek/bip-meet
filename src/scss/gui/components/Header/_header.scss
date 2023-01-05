@@ -202,6 +202,46 @@
                 margin-bottom: -20px;
               }
             }
+
+            // &:nth-child(5) {
+            //   position: absolute;
+            //   left: 210px;
+            //   top: 8px;
+            // }
+
+            // &:nth-child(6) {
+            //   position: absolute;
+            //   left: 210px;
+            //   top: 46px;
+            // }
+
+            // &:nth-child(7) {
+            //   position: absolute;
+            //   left: 210px;
+            //   top: 84px;
+            // }
+          }
+
+          > li.absolute {
+            position: absolute;
+            @include large {
+              position: static;
+            }
+          }
+
+          > li.absolute.one {
+            left: 210px;
+            top: 8px;
+          }
+
+          > li.absolute.two {
+            left: 210px;
+            top: 46px;
+          }
+
+          > li.absolute.three {
+            left: 210px;
+            top: 84px;
           }
         }
       }

@@ -24,15 +24,18 @@
     },
     {
       title:'Moderasyon & Co-Host yetkileri',
-      url:'/'
+      url:'/',
+      class:'absolute one'
     },
     {
       title:'Ara Oda Oluşturma',
-      url:'/'
+      url:'/',
+      class:'absolute two'
     },
     {
       title:'Beyaz Tahta',
-      url:'/'
+      url:'/',
+      class:'absolute three'
     }
     ]
   },
@@ -108,7 +111,7 @@
           {% if item.children %}
             <ul class="dropdown">
               {% for item in item.children %}
-                <li>
+                <li class='{% if item.class -%} {{ item.class }}{% endif -%}'>
                   <a href="{{ item.url }}">{{ item.title }}</a>
                 </li>
               {% endfor %}
