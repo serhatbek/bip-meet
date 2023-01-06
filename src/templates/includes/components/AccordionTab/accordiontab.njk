@@ -1,0 +1,20 @@
+{% import "includes/components/Card/features-info-card.njk" as FeturesInfoCard %}
+
+{% macro item(tabTitle, tabImage, cardText, cardDesc, cardBtnText, cardBtnUrl) %}
+  <div class="accordiontab">
+    <div class="accordiontab__item">
+      <button class='accordiontab__item__btn'>{{ tabTitle }}</button>
+      <div class="accordiontab__item__content">
+        <figure>
+          <img src="{{ tabImage }}">
+        </figure>
+        {{FeturesInfoCard.item(
+            title=cardText,
+            desc=cardDesc,
+            btnUrl=cardBtnText,
+            btnText=cardBtnUrl
+          )}}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
