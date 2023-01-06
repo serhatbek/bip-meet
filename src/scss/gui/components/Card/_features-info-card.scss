@@ -1,0 +1,31 @@
+.feature-info-card {
+  width: 641px;
+  padding: 40px 155px 33px 46px;
+  border-radius: 123px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: linear-gradient(
+    89deg,
+    #203043 0%,
+    rgba(24, 36, 50, 0.49) 136%,
+    rgba(24, 36, 50, 0) 136%
+  );
+
+  h3 {
+    font-size: 32px;
+    font-weight: 500;
+    color: $text-white;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  p {
+    line-height: 1.5;
+    color: $text-white;
+    margin-bottom: 18px;
+  }
+
+  div {
+    text-align: right;
+  }
+}

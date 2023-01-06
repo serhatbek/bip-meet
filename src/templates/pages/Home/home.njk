@@ -2,6 +2,7 @@
 {% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Card/banner-card.njk" as BannerCard with context %}
 {% import "includes/components/Card/offer-card.njk" as OfferCard %}
+{% import "includes/components/Card/features-info-card.njk" as FeturesInfoCard %}
 
 {# {% set HeaderClass = 'sticky' %} #}
 {% set bannerItems = [
@@ -374,5 +375,13 @@
 
   <section class="section section-features">
     <h2 class='section__title text-center'>{{ featuresItems.title }}</h2>
+    <div class="container">
+      {{FeturesInfoCard.item(
+        title='Online Konferans',
+        desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        btnText='Daha Fazla Bilgi',
+        btnUrl='../assets/Features/features.html'
+      )}}
+    </div>
   </section>
 {% endblock %}
