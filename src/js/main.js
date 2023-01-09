@@ -137,3 +137,25 @@ if (featuresTabItems) {
     });
   });
 }
+
+tabInfoBtns = document.querySelectorAll('.tab-info-btn');
+const tabInfoBtnQuery = window.matchMedia('(max-width: 600px)');
+
+const checkTabInfoBtn = (e) => {
+  if (e.matches) {
+    tabInfoBtns.forEach((btn) => {
+      btn.classList.remove('button--download', 'button--download__underline');
+      btn.classList.add('button--xs');
+    });
+  } else {
+    tabInfoBtns.forEach((btn) => {
+      btn.classList.add('button--download', 'button--download__underline');
+      btn.classList.remove('button--xs');
+    });
+  }
+};
+if (tabInfoBtns) {
+  tabInfoBtnQuery.addEventListener('change', checkTabInfoBtn);
+}
+
+checkTabInfoBtn(tabInfoBtnQuery);

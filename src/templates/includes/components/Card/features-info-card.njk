@@ -1,6 +1,6 @@
 {% import "includes/components/Button/button.njk" as Button %}
 
-{% macro item(title, desc, class, btnUrl, btnText) %}
+{% macro item(title, desc, class, btnUrl, btnText, btnClass) %}
   <div class="feature-info-card {% if class -%}{{ class }}{%- endif %}">
     <h3>{{ title }}</h3>
     <p>{{ desc }}</p>
@@ -8,7 +8,7 @@
       {{Button.item(
         href=btnUrl,
         text=btnText,
-        class='button--download button--download__underline'
+        class='button--download button--download__underline tab-info-btn'
       )}}
     </div>
   </div>

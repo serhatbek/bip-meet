@@ -13,41 +13,10 @@
             title=item.infotText,
             desc=item.infoDesc,
             btnText=item.infoBtnText,
-            btnUrl=item.infoBtnUrl,
-            class='absolute'
+            btnUrl=item.infoBtnUrl
           )}}
         </div>
       </div>
     {% endfor %}
   </div>
 {% endmacro %}
-
-{# tabTitle=item.title,
-        tabImage=item.img,
-        tabClass= item.class,
-        cardText=item.infotText,
-        cardDesc=item.infoDesc,
-        cardBtnText=item.infoBtnText,
-        cardBtnUrl=item.infoBtnUrl  #}
-
-{# {% macro item(tabs, tabTitle, tabImage, tabClass, cardText, cardDesc, cardBtnText, cardBtnUrl) %}
-  <div class="accordiontab">
-    {% for item in tabs %}
-    <div class="accordiontab__item">
-      <button class='accordiontab__item__btn  {% if tabClass -%}{{ tabClass }}{%- endif %}'>{{ tabTitle }}</button>
-      <div class="accordiontab__item__content {% if tabClass -%}{{ tabClass }}{%- endif %}">
-        <figure>
-          <img src="{{ tabImage }}">
-        </figure>
-        {{FeturesInfoCard.item(
-            title=cardText,
-            desc=cardDesc,
-            btnText=cardBtnText,
-            btnUrl=cardBtnUrl,
-            class='absolute'
-          )}}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-{% endmacro %} #}
