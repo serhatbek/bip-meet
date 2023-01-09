@@ -1,7 +1,38 @@
 {% import "includes/components/Card/features-info-card.njk" as FeturesInfoCard %}
 
-{% macro item(tabTitle, tabImage, tabClass, cardText, cardDesc, cardBtnText, cardBtnUrl) %}
+{% macro item(data) %}
   <div class="accordiontab">
+    {% for item in data %}
+      <div class="accordiontab__item">
+        <button class='accordiontab__item__btn  {% if item.class -%}{{ item.class }}{%- endif %}'>{{ item.title }}</button>
+        <div class="accordiontab__item__content {% if item.class -%}{{ item.class }}{%- endif %}">
+          <figure>
+            <img src="{{ item.img }}">
+          </figure>
+          {{FeturesInfoCard.item(
+            title=item.infotText,
+            desc=item.infoDesc,
+            btnText=item.infoBtnText,
+            btnUrl=item.infoBtnUrl,
+            class='absolute'
+          )}}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}
+
+{# tabTitle=item.title,
+        tabImage=item.img,
+        tabClass= item.class,
+        cardText=item.infotText,
+        cardDesc=item.infoDesc,
+        cardBtnText=item.infoBtnText,
+        cardBtnUrl=item.infoBtnUrl  #}
+
+{# {% macro item(tabs, tabTitle, tabImage, tabClass, cardText, cardDesc, cardBtnText, cardBtnUrl) %}
+  <div class="accordiontab">
+    {% for item in tabs %}
     <div class="accordiontab__item">
       <button class='accordiontab__item__btn  {% if tabClass -%}{{ tabClass }}{%- endif %}'>{{ tabTitle }}</button>
       <div class="accordiontab__item__content {% if tabClass -%}{{ tabClass }}{%- endif %}">
@@ -17,5 +48,6 @@
           )}}
       </div>
     </div>
+    {% endfor %}
   </div>
-{% endmacro %}
+{% endmacro %} #}

@@ -11,18 +11,38 @@
     rgba(24, 36, 50, 0) 136%
   );
 
+  @include laptop {
+    width: 640px;
+    padding: 40px 255px 33px 46px;
+  }
+
+  @include phone {
+    width: 282.2px;
+    padding: 19.7px 16px 11px 34.2px;
+  }
+
   h3 {
     font-size: 32px;
     font-weight: 500;
     color: $text-white;
     line-height: 1.5;
     margin-bottom: 15px;
+
+    @include laptop {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
   }
 
   p {
     line-height: 1.5;
     color: $text-white;
     margin-bottom: 18px;
+
+    @include laptop {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
   }
 
   div {

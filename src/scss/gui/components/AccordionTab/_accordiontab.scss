@@ -1,46 +1,65 @@
 .accordiontab {
   position: relative;
+
   &__item {
     display: flex;
-    // justify-content: space-between;
-    // align-items: center;
+    @include desktop {
+      flex-direction: column;
+    }
 
-    > button {
-      width: 230px;
-      height: 36px;
+    &__btn {
+      width: 100%;
+      text-align: left;
+      height: 33px;
       position: relative;
       font-size: 24px;
       border: none;
       margin-right: 156px;
-      // margin-top: -32px;
-      line-height: 1.5;
+      line-height: 1.38;
       display: block;
       background: none;
       transition: all 200ms ease-in-out;
       cursor: pointer;
 
-      &:not(:last-child) {
-        margin-bottom: 31px;
+      @include desktop {
+        margin-right: 0;
+      }
+
+      &:first-of-type {
+        margin-top: 32px;
       }
 
       &:hover {
-        line-height: 1.38;
         font-weight: 700;
       }
 
       &.active {
         line-height: 1.5;
         font-weight: 700;
+        height: 36px;
+
         color: $primary-blue;
       }
     }
 
     &__content {
       display: none;
-      position: relative;
+      position: absolute;
       z-index: 3;
+      right: 20%;
+
+      @include desktop {
+        position: relative;
+        right: 0;
+        margin-left: 30px;
+      }
+
       figure {
         max-width: 552px;
+
+        @include phone {
+          min-width: 313px;
+        }
 
         img {
           width: 100%;
@@ -51,12 +70,24 @@
       > div {
         position: absolute;
         left: 259px;
-        bottom: -92px;
+        bottom: -69px;
+
+        @include laptop {
+          bottom: -50px;
+          left: 46px;
+        }
+
+        @include phone {
+          width: 90%;
+          bottom: -62px;
+          right: 0;
+        }
       }
     }
 
     &__content.active {
       display: block;
+      margin-bottom: 58px;
     }
   }
 }

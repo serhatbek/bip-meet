@@ -1,6 +1,7 @@
 $phone-max: 600px;
 $tablet-max: 768px;
 $laptop-max: 992px;
+$desktop-max: 1050px;
 $large-max: 1110px;
 
 @mixin phone {
@@ -17,6 +18,12 @@ $large-max: 1110px;
 
 @mixin laptop {
   @media (max-width: $laptop-max) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: $desktop-max) {
     @content;
   }
 }
