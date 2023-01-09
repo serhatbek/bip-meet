@@ -3,9 +3,9 @@
 {% macro item(data) %}
   <div class="accordiontab">
     {% for item in data %}
-      <div class="accordiontab__item">
-        <button class='accordiontab__item__btn  {% if item.class -%}{{ item.class }}{%- endif %}'>{{ item.title }}</button>
-        <div class="accordiontab__item__content {% if item.class -%}{{ item.class }}{%- endif %}">
+      <div class="accordiontab__item {% if item.class -%}{{ item.class }}{%- endif %}">
+        <button class='accordiontab__item__btn'>{{ item.title }}</button>
+        <div class="accordiontab__item__content">
           <figure>
             <img src="{{ item.img }}">
           </figure>

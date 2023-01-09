@@ -117,3 +117,23 @@ if (copyrightYear) {
 }
 
 //*************** */
+
+featuresTabItems = document.querySelectorAll('.accordiontab__item');
+
+const showTabPanel = (e) => {
+  let target = e.currentTarget;
+  if (!target.classList.contains('active')) {
+    featuresTabItems.forEach((tab) => tab.classList.remove('active'));
+    target.classList.add('active');
+  } else {
+    // target.classList.remove('active');
+  }
+};
+
+if (featuresTabItems) {
+  featuresTabItems.forEach((tab) => {
+    tab.addEventListener('click', (e) => {
+      showTabPanel(e);
+    });
+  });
+}

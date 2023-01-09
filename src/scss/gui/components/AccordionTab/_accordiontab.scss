@@ -6,11 +6,14 @@
     @include desktop {
       flex-direction: column;
     }
+    @include phone {
+      align-items: flex-end;
+    }
 
     &__btn {
       width: 100%;
       text-align: left;
-      height: 33px;
+      // height: 33px;
       position: relative;
       font-size: 24px;
       border: none;
@@ -33,13 +36,45 @@
         font-weight: 700;
       }
 
-      &.active {
-        line-height: 1.5;
-        font-weight: 700;
-        height: 36px;
+      // &.active {
+      //   line-height: 1.5;
+      //   font-weight: 700;
+      //   height: 36px;
+      //   color: $primary-blue;
 
-        color: $primary-blue;
+      //   @include desktop {
+      //     margin-bottom: 26px;
+      //   }
+
+      //   @include tablet {
+      //     &:first-child {
+      //       margin-top: 0;
+      //     }
+      //   }
+      // }
+    }
+
+    &.active .accordiontab__item__btn {
+      line-height: 1.5;
+      font-weight: 700;
+      height: 36px;
+      color: $primary-blue;
+
+      @include desktop {
+        margin-bottom: 26px;
       }
+
+      @include tablet {
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &.active .accordiontab__item__content {
+      display: block;
+      margin-bottom: 58px;
+      height: auto;
     }
 
     &__content {
@@ -47,6 +82,10 @@
       position: absolute;
       z-index: 3;
       right: 20%;
+      top: 0;
+      height: 0;
+      // overflow: hidden;
+      transition: all 0.2s ease-out;
 
       @include desktop {
         position: relative;
@@ -85,9 +124,9 @@
       }
     }
 
-    &__content.active {
-      display: block;
-      margin-bottom: 58px;
-    }
+    // &__content.active {
+    //   display: block;
+    //   margin-bottom: 58px;
+    // }
   }
 }

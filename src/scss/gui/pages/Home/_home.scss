@@ -31,4 +31,10 @@
   padding-top: 46px;
   padding-bottom: 146px;
   background-color: $bg;
+
+  h2 {
+    @include phone {
+      margin-bottom: 24px;
+    }
+  }
 }
