@@ -1,7 +1,7 @@
 {% set footerItems = {
   logo: '../assets/images/header-elements-logo.png',
   desc: 'Bip Meet ile güvenli ve kesintisiz konferans deneyimi',
-  rights: 'Tüm hakları saklıdır. 2022',
+  rights: 'Tüm hakları saklıdır.',
   linkListOne: [
     {
       title: 'Özellikler',
@@ -105,6 +105,7 @@
         <a href="{{ item.url }}">{{item.title}}</a>
       {% endfor %}
     </div>
-    <p>{{ footerItems.rights }}</p>
+    <p>{{ footerItems.rights }}
+      <span id='year'></span></p>
   </div>
 </div>

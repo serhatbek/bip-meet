@@ -59,6 +59,7 @@
   {
     title:'Online Konferans',
     img:'https://source.unsplash.com/random/552x428',
+    class:'active',
     infotText:'Online Konferans',
     infoDesc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
     infoBtnText:'Daha Fazla Bilgi',
@@ -329,22 +330,23 @@
       <div class="box">
         {% for item in offerCardItems %}
           {{OfferCard.item(
-                title=item.title,
-                desc=item.desc,
-                img=item.img
-              )}}
+            title=item.title,
+            desc=item.desc,
+            img=item.img
+          )}}
         {% endfor %}
       </div>
     </div>
   </section>
 
   <section class="section section-features">
-    <h2 class='section__title text-center'>Özlellikler</h2>
+    <h2 class='section__title text-center'>Özellikler</h2>
     <div class="container">
       {% for item in featuresTab %}
         {{AccordionTab.item(
         tabTitle=item.title,
         tabImage=item.img,
+        tabClass= item.class,
         cardText=item.infotText,
         cardDesc=item.infoDesc,
         cardBtnText=item.infoBtnText,

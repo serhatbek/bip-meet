@@ -107,3 +107,13 @@ if (bannerBtnContainer) {
   bannerSliderQuery.addEventListener('change', checkBannerSliderQuery);
   checkBannerSliderQuery(bannerSliderQuery);
 }
+
+//*************** */
+
+const copyrightYear = document.querySelector('#year');
+
+if (copyrightYear) {
+  copyrightYear.textContent = new Date().getFullYear();
+}
+
+//*************** */

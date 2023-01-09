@@ -72,6 +72,12 @@
     background: none;
     min-width: auto;
     height: auto;
+
+    &__underline {
+      border-bottom: 1px solid #03a9f4;
+      border-radius: 0;
+      line-height: 0.8;
+    }
   }
 
   &--v2 {

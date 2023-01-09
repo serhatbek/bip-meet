@@ -1,0 +1,62 @@
+.accordiontab {
+  position: relative;
+  &__item {
+    display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+
+    > button {
+      width: 230px;
+      height: 36px;
+      position: relative;
+      font-size: 24px;
+      border: none;
+      margin-right: 156px;
+      // margin-top: -32px;
+      line-height: 1.5;
+      display: block;
+      background: none;
+      transition: all 200ms ease-in-out;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-bottom: 31px;
+      }
+
+      &:hover {
+        line-height: 1.38;
+        font-weight: 700;
+      }
+
+      &.active {
+        line-height: 1.5;
+        font-weight: 700;
+        color: $primary-blue;
+      }
+    }
+
+    &__content {
+      display: none;
+      position: relative;
+      z-index: 3;
+      figure {
+        max-width: 552px;
+
+        img {
+          width: 100%;
+          border-radius: 12px;
+        }
+      }
+
+      > div {
+        position: absolute;
+        left: 259px;
+        bottom: -92px;
+      }
+    }
+
+    &__content.active {
+      display: block;
+    }
+  }
+}

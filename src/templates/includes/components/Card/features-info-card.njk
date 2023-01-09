@@ -1,21 +1,15 @@
 {% import "includes/components/Button/button.njk" as Button %}
 
-{% macro item(title, desc, btnUrl, btnText) %}
-  <div class="feature-info-card">
+{% macro item(title, desc, class, btnUrl, btnText) %}
+  <div class="feature-info-card {% if class -%}{{ class }}{%- endif %}">
     <h3>{{ title }}</h3>
     <p>{{ desc }}</p>
     <div>
       {{Button.item(
         href=btnUrl,
         text=btnText,
-        class='button--sm'
+        class='button--download button--download__underline'
       )}}
-      {# {% for item in btnItems %}
-        {{Button.item(
-        href=item.url,
-        text=item.text
-      )}}
-      {% endfor %} #}
     </div>
   </div>
 {% endmacro %}
