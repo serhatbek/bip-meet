@@ -4,6 +4,7 @@ const menuToggleBtn = document.querySelector('.header__menu-toggle');
 const menuToggleIcon = document.querySelector('.header__menu-toggle img');
 const header = document.querySelector('.header');
 const headerNav = document.querySelector('nav');
+const navOverlay = document.querySelector('.nav-overlay');
 const headerBtns = document.querySelectorAll('.button--xs');
 const body = document.querySelector('body');
 
@@ -11,7 +12,11 @@ if (dropdownItems) {
   window.addEventListener('click', (e) => {
     let target = e.target.closest('.js-dropdown-btn');
     if (!target) {
-      dropdownBtns.forEach((btn) => btn.classList.remove('active'));
+      dropdownBtns.forEach((btn) => {
+        btn.classList.remove('active');
+        navOverlay.classList.remove('active');
+        body.classList.remove('overflowHidden');
+      });
     }
   });
 }
@@ -43,10 +48,15 @@ if (dropdownBtns) {
       if (!target.classList.contains('active')) {
         dropdownBtns.forEach((item) => {
           item.classList.remove('active');
+          // navOverlay.classList.remove('active');
         });
         target.classList.add('active');
+        navOverlay.classList.add('active');
+        body.classList.add('overflowHidden');
       } else {
         target.classList.remove('active');
+        navOverlay.classList.remove('active');
+        body.classList.remove('overflowHidden');
       }
     });
   });
