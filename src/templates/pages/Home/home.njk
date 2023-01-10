@@ -1,9 +1,9 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Card/offer-card.njk" as OfferCard %}
-{% import "includes/components/AccordionTab/accordiontab.njk" as AccordionTab %}
+{% import "includes/components/Tab/tab-features.njk" as AccordionTab %}
+{% import "includes/components/Tab/tab-sectors.njk" as SectorsTab %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
-{% import "includes/components/Slider/slider-customers.njk" as SliderCustomers %}
 
 {# {% set HeaderClass = 'sticky' %} #}
 {% set bannerItems = [
@@ -108,249 +108,239 @@
   }
 ] %}
 
-{% set sectorItems = {
+{% set sectorsItems = {
+  heading:'Sektörler',
   tabButtons: [
     {
       text:'Kamu',
+      class:'button--mid',
       attr:'data-tab-target=public'
     },
         {
       text:'Sağlık',
+      class:'button--mid active',
       attr:'data-tab-target=health'
     },
         {
       text:'Yerel Yönetim',
+      class:'button--mid',
       attr:'data-tab-target=gov'
     },
         {
-      text:'Kurumsal Firmalar',
+      text:'Eğitim',
+      class:'button--mid',
       attr:'data-tab-target=edu'
     },
         {
-      text:'Kamu',
+      text:'Kurumsal Firmalar',
+      class:'button--mid',
       attr:'data-tab-target=firm'
     }
   ],
-    refTitle:'Bip Meet’i tercih edenler',
-    refDesc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
   tabContents: [
     {
       img:'https://source.unsplash.com/random/552x402',
       title:'Lorem ipsum dolor sit amet, consectetur adip',
       desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
       id:'public',
+      refTitle:'Bip Meet’i tercih edenler',
+      refDesc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
       refItems: [
-    {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    }
-  ]
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
     },
         {
       img:'https://source.unsplash.com/random/552x402',
-      title:'Ipsum dolor sit amet, consectetur adip',
+      title:'Lorem ipsum dolor sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
       id:'health',
-      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+      refTitle:'Bip Meet’i tercih edenler',
+      refDesc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
       refItems: [
-    {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    }
-  ]
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
     },
         {
       img:'https://source.unsplash.com/random/552x402',
-      title:'Dolor Lorem ipsum sit amet, consectetur adip',
+      title:'Lorem ipsum dolor sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
       id:'gov',
-      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+      refTitle:'Bip Meet’i tercih edenler',
+      refDesc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
       refItems: [
-    {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    }
-  ]
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
     },
         {
       img:'https://source.unsplash.com/random/552x402',
-      title:'Sit amet lorem ipsum dolor, consectetur adip',
+      title:'Lorem ipsum dolor sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
       id:'edu',
-      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
-        refItems: [
-    {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    }
-  ]
+      refTitle:'Bip Meet’i tercih edenler',
+      refDesc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+      refItems: [
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
     },
         {
       img:'https://source.unsplash.com/random/552x402',
-      title:'Consectetur ipsum dolor sit amet, consectetur adip',
-      id:'firm',
+      title:'Lorem ipsum dolor sit amet, consectetur adip',
       desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
-        refItems: [
-    {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
-    },
-        {
-      title:'Milli Eğitim Bakanlığı',
-      img:'https://source.unsplash.com/random/76x76'
+      id:'firm',
+      refTitle:'Bip Meet’i tercih edenler',
+      refDesc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+      refItems: [
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
     }
   ]
-    }
-  ]
-} %}
 
-{% set customersItems = [
-  {
-    title: 'Güvenli İletişim',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  }, {
-    title: 'Türkiye’nin Verisi Türkiye’de',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  }, {
-    title: 'Tüm cihazlardan ve
- tarayıcıdan Erişim ',
- img: 'https://source.unsplash.com/random/76x76',
- class:'swiper-slide'
-  }, {
-    title: 'Kişiye Özel Oda',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  }, {
-    title: 'Kolay Kullanım',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  }, {
-    title: 'Ayda 50 adet Toplantı Hakkı',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  },
-    {
-    title: 'Güvenli İletişim',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  }, {
-    title: 'Türkiye’nin Verisi Türkiye’de',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  }, {
-    title: 'Tüm cihazlardan ve
- tarayıcıdan Erişim ',
- img: 'https://source.unsplash.com/random/76x76',
- class:'swiper-slide'
-  }, {
-    title: 'Kişiye Özel Oda',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  }, {
-    title: 'Kolay Kullanım',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  }, {
-    title: 'Ayda 50 adet Toplantı Hakkı',
-    img: 'https://source.unsplash.com/random/76x76',
-    class:'swiper-slide'
-  }
-] %}
+} %}
 
 {% block content %}
   <section class="section section-banner">
@@ -386,10 +376,11 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section-sectors">
+    <h2 class='section__title text-center'>{{ sectorsItems.heading }}</h2>
     <div class="container">
-      {{SliderCustomers.item(
-        data= customersItems
+      {{SectorsTab.item(
+        data=sectorsItems
       )}}
     </div>
   </section>

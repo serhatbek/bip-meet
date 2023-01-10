@@ -1,0 +1,29 @@
+.common-card {
+  display: flex;
+  align-items: center;
+
+  figure {
+    max-width: 552px;
+    margin-right: 27.5px;
+
+    img {
+      border-radius: 12px;
+    }
+  }
+
+  div {
+    max-width: 462px;
+    h3 {
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.19;
+      color: $text-black;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.5;
+      font-size: 16px;
+    }
+  }
+}

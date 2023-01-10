@@ -103,6 +103,7 @@ const sliderCustomers = document.querySelector('.slider-customers');
 if (sliderCustomers) {
   var swiper = new Swiper('.slider-customers', {
     spaceBetween: 24,
+    slidesPerView: 4,
     speed: 1100,
     loop: true,
     navigation: {

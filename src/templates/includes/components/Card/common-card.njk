@@ -1,0 +1,11 @@
+{% macro item(img, title, desc) %}
+  <div class='common-card'>
+    <figure>
+      <img src="{{ img }}" alt="{{ title }}">
+    </figure>
+    <div>
+      <h3>{{ title }}</h3>
+      <p>{{ desc }}</p>
+    </div>
+  </div>
+{% endmacro %}

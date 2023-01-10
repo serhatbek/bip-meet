@@ -5,10 +5,10 @@
     <div class="swiper-wrapper">
       {% for item in data %}
         {{CustomersCard.item(
-      img=item.img,
-      title=item.title,
-      class=item.class
-    )}}
+          img=item.img,
+          title=item.title,
+          class=item.class
+        )}}
       {% endfor %}
     </div>
     <div class="customers-slider-btn swiper-button-next"></div>

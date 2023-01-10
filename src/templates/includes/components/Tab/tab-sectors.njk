@@ -1,0 +1,37 @@
+{% import "includes/components/Button/button.njk" as Button %}
+{% import "includes/components/Card/common-card.njk" as CommonCard %}
+{% import "includes/components/Slider/slider-customers.njk" as SliderCustomers %}
+
+{% macro item(data) %}
+  <div class="tabs-sector">
+    <div class='tabs-sector__indicators'>
+      {% for item in data.tabButtons %}
+        {{Button.item(
+        text=item.text,
+        attr=item.attr,
+        buttonV2=true,
+        class= item.class
+        
+      )}}
+      {% endfor %}
+    </div>
+    {% for item in data.tabContents %}
+      <div class='tabs-sector__content' id='{{item.id}}'>
+        {{CommonCard.item(
+          img=item.img,
+          title=item.title,
+          desc=item.desc
+        )}}
+
+        <article>
+          <h3 class='section__title'>{{ item.refTitle }}</h3>
+          <p class='section__desc'>{{item.refDesc}}</p>
+
+          {{SliderCustomers.item(
+              data= item.refItems
+            )}}
+        </article>
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}

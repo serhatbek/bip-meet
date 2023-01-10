@@ -30,7 +30,26 @@
 .section-features {
   padding-top: 46px;
   padding-bottom: 146px;
-  background-color: $bg;
+  background: linear-gradient(
+    to bottom,
+    #f4f4f4 67%,
+    $primary-dark-blue-light-9
+  );
+
+  h2 {
+    @include phone {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.section-sectors {
+  padding: 76px 0;
+  background: linear-gradient(
+    to bottom,
+    #f4f4f4 67%,
+    $primary-dark-blue-light-9
+  );
 
   h2 {
     @include phone {
