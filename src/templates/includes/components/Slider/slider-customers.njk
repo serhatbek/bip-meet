@@ -1,0 +1,17 @@
+{% import "includes/components/Card/customers-card.njk" as CustomersCard %}
+
+{% macro item(data) %}
+  <div class="swiper slider-customers">
+    <div class="swiper-wrapper">
+      {% for item in data %}
+        {{CustomersCard.item(
+      img=item.img,
+      title=item.title,
+      class=item.class
+    )}}
+      {% endfor %}
+    </div>
+    <div class="customers-slider-btn swiper-button-next"></div>
+    <div class="customers-slider-btn swiper-button-prev"></div>
+  </div>
+{% endmacro %}

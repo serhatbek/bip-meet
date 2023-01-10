@@ -80,22 +80,38 @@ window.addEventListener('scroll', () => {
 });
 
 //******************* */
+const sliderBanner = document.querySelector('.slider-banner');
+if (sliderBanner) {
+  var swiper = new Swiper('.slider-banner', {
+    spaceBetween: 300,
+    speed: 1100,
+    parallax: true,
+    loop: true,
 
-var swiper = new Swiper('.swiper-banner', {
-  spaceBetween: 300,
-  speed: 1100,
-  parallax: true,
-  loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 7500,
+      disableOnInteraction: false,
+    },
+  });
+}
 
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  autoplay: {
-    delay: 7500,
-    disableOnInteraction: false,
-  },
-});
+const sliderCustomers = document.querySelector('.slider-customers');
+if (sliderCustomers) {
+  var swiper = new Swiper('.slider-customers', {
+    spaceBetween: 24,
+    speed: 1100,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      clickable: true,
+    },
+  });
+}
 
 //*************** */
 

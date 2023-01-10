@@ -2,7 +2,7 @@
 {% import "includes/components/Button/button.njk" as Button %}
 
 {% macro item(data) %}
-  <div class="swiper swiper-banner">
+  <div class="swiper slider-banner">
     <div class="swiper-wrapper">
       {% for item in data %}
         {% call BannerCard.item(title = item.heading, desc = item.desc, img = item.img, class='swiper-slide') %}

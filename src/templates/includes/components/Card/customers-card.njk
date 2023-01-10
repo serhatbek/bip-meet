@@ -1,0 +1,8 @@
+{% macro item(img, title, class) %}
+  <div class='customers-card {%- if class %} {{ class }}{%- endif %}'>
+    <figure>
+      <img src="{{ img }}" alt="{{ title }}">
+    </figure>
+    <p>{{ title }}</p>
+  </div>
+{% endmacro %}

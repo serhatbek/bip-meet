@@ -1,9 +1,9 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Button/button.njk" as Button %}
-{# {% import "includes/components/Card/banner-card.njk" as BannerCard with context %} #}
 {% import "includes/components/Card/offer-card.njk" as OfferCard %}
 {% import "includes/components/AccordionTab/accordiontab.njk" as AccordionTab %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
+{% import "includes/components/Slider/slider-customers.njk" as SliderCustomers %}
 
 {# {% set HeaderClass = 'sticky' %} #}
 {% set bannerItems = [
@@ -297,6 +297,61 @@
   ]
 } %}
 
+{% set customersItems = [
+  {
+    title: 'Güvenli İletişim',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  }, {
+    title: 'Türkiye’nin Verisi Türkiye’de',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  }, {
+    title: 'Tüm cihazlardan ve
+ tarayıcıdan Erişim ',
+ img: 'https://source.unsplash.com/random/76x76',
+ class:'swiper-slide'
+  }, {
+    title: 'Kişiye Özel Oda',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  }, {
+    title: 'Kolay Kullanım',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  }, {
+    title: 'Ayda 50 adet Toplantı Hakkı',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  },
+    {
+    title: 'Güvenli İletişim',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  }, {
+    title: 'Türkiye’nin Verisi Türkiye’de',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  }, {
+    title: 'Tüm cihazlardan ve
+ tarayıcıdan Erişim ',
+ img: 'https://source.unsplash.com/random/76x76',
+ class:'swiper-slide'
+  }, {
+    title: 'Kişiye Özel Oda',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  }, {
+    title: 'Kolay Kullanım',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  }, {
+    title: 'Ayda 50 adet Toplantı Hakkı',
+    img: 'https://source.unsplash.com/random/76x76',
+    class:'swiper-slide'
+  }
+] %}
+
 {% block content %}
   <section class="section section-banner">
     <div class="container">
@@ -327,6 +382,14 @@
     <div class="container">
       {{AccordionTab.item(
         data=featuresTab
+      )}}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {{SliderCustomers.item(
+        data= customersItems
       )}}
     </div>
   </section>
