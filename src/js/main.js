@@ -48,7 +48,6 @@ if (dropdownBtns) {
       if (!target.classList.contains('active')) {
         dropdownBtns.forEach((item) => {
           item.classList.remove('active');
-          // navOverlay.classList.remove('active');
         });
         target.classList.add('active');
         navOverlay.classList.add('active');

@@ -1,8 +1,9 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Button/button.njk" as Button %}
-{% import "includes/components/Card/banner-card.njk" as BannerCard with context %}
+{# {% import "includes/components/Card/banner-card.njk" as BannerCard with context %} #}
 {% import "includes/components/Card/offer-card.njk" as OfferCard %}
 {% import "includes/components/AccordionTab/accordiontab.njk" as AccordionTab %}
+{% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
 
 {# {% set HeaderClass = 'sticky' %} #}
 {% set bannerItems = [
@@ -299,27 +300,9 @@
 {% block content %}
   <section class="section section-banner">
     <div class="container">
-      <div class="swiper swiper-banner">
-        <div class="swiper-wrapper">
-          {% for item in bannerItems %}
-            {% call BannerCard.item(title = item.heading, desc = item.desc, img = item.img, class='swiper-slide') %}
-            {{Button.item(
-              text=item.btnTextOne,
-              class='button--sm',
-              href='/'
-            )}}
-
-            {% if item.btnTextTwo %}
-              {{Button.item(
-              text=item.btnTextTwo,
-              class='button--sm',
-              href='/'
-            )}}
-            {% endif %}
-            {% endcall %}
-          {% endfor %}
-        </div>
-      </div>
+      {{SliderBanner.item(
+          data= bannerItems
+        )}}
       <div class="swiper-pagination"></div>
     </div>
   </section>
