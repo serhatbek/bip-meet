@@ -1,8 +1,15 @@
+$xs-max: 460px;
 $phone-max: 600px;
 $tablet-max: 768px;
 $laptop-max: 992px;
 $desktop-max: 1050px;
 $large-max: 1110px;
+
+@mixin xs {
+  @media (max-width: $xs-max) {
+    @content;
+  }
+}
 
 @mixin phone {
   @media (max-width: $phone-max) {

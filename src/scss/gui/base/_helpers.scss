@@ -41,7 +41,15 @@
 }
 
 .customers-slider-btn {
-  top: 40% !important;
+  top: 45% !important;
+}
+
+.customers-slider-btn.swiper-button-prev {
+  left: -6px;
+}
+
+.customers-slider-btn.swiper-button-next {
+  right: -6px;
 }
 
 .customers-slider-btn::after {

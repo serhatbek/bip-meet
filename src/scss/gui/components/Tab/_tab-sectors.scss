@@ -1,7 +1,41 @@
-.tabs-sector {
-  &__indicators {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.tab-sector {
+  &__header {
+    margin-bottom: 46px;
+
+    .swiper-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    article {
+      margin-top: 76px;
+      padding-bottom: 62px;
+      padding-top: 46px;
+
+      h3 {
+        font-size: 34px;
+        font-weight: 500;
+        line-height: 1.41;
+        color: $primary-dark-blue;
+        margin-bottom: 20px;
+      }
+
+      > p {
+        max-width: 830px;
+        line-height: 1.5;
+        font-weight: 500;
+        color: $text-black;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__content.active {
+    display: block;
   }
 }

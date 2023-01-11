@@ -103,7 +103,7 @@ const sliderCustomers = document.querySelector('.slider-customers');
 if (sliderCustomers) {
   var swiper = new Swiper('.slider-customers', {
     spaceBetween: 24,
-    slidesPerView: 4,
+    slidesPerView: 1,
     speed: 1100,
     loop: true,
     navigation: {
@@ -111,8 +111,65 @@ if (sliderCustomers) {
       prevEl: '.swiper-button-prev',
       clickable: true,
     },
+    breakpoints: {
+      460: {
+        slidesPerView: 2,
+      },
+      600: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+    },
   });
 }
+
+const sliderSectorTab = document.querySelector('.slider-sector-tab');
+
+if (sliderSectorTab) {
+  const sectorsQuery = window.matchMedia('(max-width: 1110px)');
+  const addSectorTabSlider = (e) => {
+    if (e.matches) {
+      // console.log(sliderSectorTab);
+      const swiper = new Swiper('.slider-sector-tab', {
+        spaceBetween: 26,
+        slidesPerView: 5,
+        speed: 1100,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true,
+        },
+        // breakpoints: {
+        //   600: {
+        //     slidesPerView: 3,
+        //   },
+        //   1110: {
+        //     slidesPerView: 5,
+        //   },
+        // },
+      });
+    }
+  };
+
+  sectorsQuery.addEventListener('change', addSectorTabSlider);
+  addSectorTabSlider(sectorsQuery);
+}
+
+// var swiper = new Swiper('.slider-sector-tab', {
+//   spaceBetween: 26,
+//   slidesPerView: auto,
+//   direction: 'horizontal',
+//   speed: 1100,
+//   loop: true,
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//     clickable: true,
+//   },
+// });
 
 //*************** */
 
@@ -185,3 +242,30 @@ if (tabInfoBtns) {
 }
 
 checkTabInfoBtn(tabInfoBtnQuery);
+
+//*************** */
+
+const sectorTabBtns = document.querySelectorAll('[data-tab-target]');
+const sectorTabContents = document.querySelectorAll('.tab-sector__content');
+
+const showSectorPanel = (e) => {
+  let tabId = e.target.dataset.tabTarget,
+    target = document.getElementById(tabId);
+
+  sectorTabBtns.forEach((btn) => {
+    btn.classList.remove('active');
+  });
+
+  sectorTabContents.forEach((panel) => {
+    panel.classList.remove('active');
+  });
+
+  e.target.classList.add('active');
+  target.classList.add('active');
+};
+
+if (sectorTabBtns) {
+  sectorTabBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => showSectorPanel(e));
+  });
+}

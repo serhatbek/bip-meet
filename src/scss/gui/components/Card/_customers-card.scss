@@ -7,19 +7,33 @@
   border-radius: 8px;
   background-color: $text-white;
 
+  @include phone {
+    max-width: 211.2px;
+  }
+
   figure {
     width: 76px;
     height: 76px;
     margin-bottom: 9px;
 
+    @include tablet {
+      width: 60.8px;
+      height: 60.8px;
+    }
+
     img {
       border-radius: 50%;
+      width: 100%;
     }
   }
 
   p {
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 700;
     color: $text-black;
+
+    @include tablet {
+      font-size: 12px;
+    }
   }
 }
