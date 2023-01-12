@@ -1,1 +1,15 @@
-{% macro item(args) %}{% endmacro %}
+{% import "includes/components/Card/testimonial-card.njk" as TestimonialCard %}
+
+{% macro item(testimonialData) %}
+  <div class="swiper testimonialSwiper">
+    <div class="swiper-wrapper">
+      {% for item in testimonialData %}
+        {{TestimonialCard.item(
+    title:item.title,
+    img:item.img,
+    desc:item.desc
+  )}}
+      {% endfor %}
+    </div>
+  </div>
+{% endmacro %}

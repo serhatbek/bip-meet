@@ -1,7 +1,7 @@
-{% macro item(title, desc, img) %}
-  <div class="testimonial-card">
+{% macro item(title, desc, img, addClass) %}
+  <div class="testimonial-card{%- if addClass %} {{ addClass }}{%- endif %}">
     <h3>{{ title }}</h3>
-    <div>
+    <div class='testimonial-card__content'>
       <figure>
         <img src="{{ img }}" alt="{{ title }}">
       </figure>
