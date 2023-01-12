@@ -5,15 +5,15 @@
 {% macro item(data) %}
   <div class="tab-sector">
     <div class='tab-sector__header'>
-      <div class="swiper slider-sector-tab">
+      <div class="swiper sectorsTabSlider">
         <div class="swiper-wrapper">
           {% for item in data.tabButtons %}
             {{Button.item(
-        text=item.text,
-        attr=item.attr,
-        buttonV2=true,
-        class= item.class
-      )}}
+              text=item.text,
+              attr=item.attr,
+              buttonV2=true,
+              class= item.class
+            )}}
           {% endfor %}
         </div>
       </div>
@@ -34,7 +34,8 @@
             {{SliderCustomers.item(
               data= item.refItems
             )}}
-
+            <div class="customers-slider-btn swiper-button-next"></div>
+            <div class="customers-slider-btn swiper-button-prev"></div>
           </div>
         </article>
       </div>

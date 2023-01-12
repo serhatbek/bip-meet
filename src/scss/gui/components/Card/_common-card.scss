@@ -2,6 +2,14 @@
   display: flex;
   align-items: center;
 
+  @include tablet {
+    flex-direction: column;
+  }
+
+  @include phone {
+    align-items: flex-start;
+  }
+
   figure {
     max-width: 552px;
     margin-right: 27.5px;
@@ -9,6 +17,12 @@
     img {
       border-radius: 12px;
       width: 100%;
+      display: block;
+    }
+
+    @include tablet {
+      margin-bottom: 24px;
+      margin-right: 0;
     }
   }
 
@@ -20,11 +34,20 @@
       line-height: 1.19;
       color: $text-black;
       margin-bottom: 15px;
+
+      @include tablet {
+        font-size: 24px;
+        line-height: 1.25;
+      }
     }
 
     p {
       line-height: 1.5;
       font-size: 16px;
+
+      @include tablet {
+        line-height: 1.25;
+      }
     }
   }
 }

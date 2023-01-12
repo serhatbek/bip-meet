@@ -81,8 +81,9 @@ window.addEventListener('scroll', () => {
 
 //******************* */
 const sliderBanner = document.querySelector('.slider-banner');
+let bannerSwiper;
 if (sliderBanner) {
-  var swiper = new Swiper('.slider-banner', {
+  bannerSwiper = new Swiper('.slider-banner', {
     spaceBetween: 300,
     speed: 1100,
     parallax: true,
@@ -97,11 +98,14 @@ if (sliderBanner) {
       disableOnInteraction: false,
     },
   });
+} else {
+  bannerSwiper.destroy(true, true);
 }
 
 const sliderCustomers = document.querySelector('.slider-customers');
+let customersSwiper;
 if (sliderCustomers) {
-  var swiper = new Swiper('.slider-customers', {
+  customersSwiper = new Swiper('.slider-customers', {
     spaceBetween: 24,
     slidesPerView: 1,
     speed: 1100,
@@ -116,59 +120,57 @@ if (sliderCustomers) {
         slidesPerView: 2,
       },
       600: {
-        slidesPerView: 3,
+        slidesPerView: 2,
       },
       992: {
         slidesPerView: 4,
       },
     },
   });
+} else {
+  customersSwiper.destroy(true, true);
 }
 
 const sliderSectorTab = document.querySelector('.slider-sector-tab');
-
-if (sliderSectorTab) {
-  const sectorsQuery = window.matchMedia('(max-width: 1110px)');
-  const addSectorTabSlider = (e) => {
-    if (e.matches) {
-      // console.log(sliderSectorTab);
-      const swiper = new Swiper('.slider-sector-tab', {
-        spaceBetween: 26,
-        slidesPerView: 5,
-        speed: 1100,
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-          clickable: true,
+const sectorsQuery = window.matchMedia('(max-width: 1110px)');
+let sectorTabSwiper;
+// const sectorTabBtns = document.querySelectorAll('[data-tab-target]');
+const addSectorTabSlider = (e) => {
+  console.log('first');
+  if (e.matches) {
+    console.log('second');
+    sectorTabSwiper = new Swiper('.sectorsTabSlider', {
+      spaceBetween: 26,
+      slidesPerView: 5,
+      speed: 1100,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        clickable: true,
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 3,
         },
-        // breakpoints: {
-        //   600: {
-        //     slidesPerView: 3,
-        //   },
-        //   1110: {
-        //     slidesPerView: 5,
-        //   },
-        // },
-      });
-    }
-  };
+        1110: {
+          slidesPerView: 5,
+        },
+      },
+    });
+  }
+};
 
-  sectorsQuery.addEventListener('change', addSectorTabSlider);
-  addSectorTabSlider(sectorsQuery);
-}
+sectorsQuery.addEventListener('change', addSectorTabSlider);
+addSectorTabSlider(sectorsQuery);
 
-// var swiper = new Swiper('.slider-sector-tab', {
-//   spaceBetween: 26,
-//   slidesPerView: auto,
-//   direction: 'horizontal',
-//   speed: 1100,
-//   loop: true,
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//     clickable: true,
-//   },
+// sectorTabBtns.forEach((btn) => {
+//   btn.classList.remove('button--mid');
+//   btn.classList.add('button--sm');
+// });
+// sectorTabBtns.forEach((btn) => {
+//   btn.classList.add('button--mid');
+//   btn.classList.remove('button--sm');
 // });
 
 //*************** */

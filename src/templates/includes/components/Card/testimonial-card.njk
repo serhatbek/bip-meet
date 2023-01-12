@@ -1,0 +1,15 @@
+{% macro item(title, desc, img) %}
+  <div class="testimonial-card">
+    <h3>{{ title }}</h3>
+    <div>
+      <figure>
+        <img src="{{ img }}" alt="{{ title }}">
+      </figure>
+      <p>
+        {{ desc }}
+        <span></span>
+        <span></span>
+      </p>
+    </div>
+  </div>
+{% endmacro %}
