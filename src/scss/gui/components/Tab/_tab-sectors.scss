@@ -6,6 +6,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      button {
+        max-width: 208px !important;
+
+        @include phone {
+          max-width: 138.5px !important;
+        }
+      }
     }
   }
 

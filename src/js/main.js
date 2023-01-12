@@ -131,49 +131,68 @@ if (sliderCustomers) {
   customersSwiper.destroy(true, true);
 }
 
-const sliderSectorTab = document.querySelector('.slider-sector-tab');
-const sectorsQuery = window.matchMedia('(max-width: 1110px)');
 let sectorTabSwiper;
-// const sectorTabBtns = document.querySelectorAll('[data-tab-target]');
-const addSectorTabSlider = (e) => {
-  console.log('first');
+let init = false;
+let tablet = window.matchMedia('(min-width: 0px) and (max-width: 1110px)');
+
+const swiperMode = () => {
+  if (tablet.matches) {
+    if (!init) {
+      init = true;
+      sectorTabSwiper = new Swiper('.sectorsTabSlider', {
+        spaceBetween: 26,
+        slidesPerView: 5,
+        speed: 1100,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true,
+        },
+        breakpoints: {
+          600: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    } else {
+      init = false;
+      sectorTabSwiper.destroy();
+    }
+  }
+};
+
+window.addEventListener('load', function () {
+  swiperMode();
+});
+
+window.addEventListener('resize', function () {
+  swiperMode();
+});
+
+//****************** */
+
+const sectorsTabBtnsQuery = window.matchMedia('(max-width: 600px)');
+const sectorSliderTabBtns = document.querySelectorAll('[data-tab-target]');
+
+const checkSectorsTabBtnsQuery = (e) => {
   if (e.matches) {
-    console.log('second');
-    sectorTabSwiper = new Swiper('.sectorsTabSlider', {
-      spaceBetween: 26,
-      slidesPerView: 5,
-      speed: 1100,
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        clickable: true,
-      },
-      breakpoints: {
-        600: {
-          slidesPerView: 3,
-        },
-        1110: {
-          slidesPerView: 5,
-        },
-      },
+    sectorSliderTabBtns.forEach((btn) => {
+      btn.classList.remove('button--mid');
+      btn.classList.add('button--sm');
+    });
+  } else {
+    sectorSliderTabBtns.forEach((btn) => {
+      btn.classList.add('button--mid');
+      btn.classList.remove('button--sm');
     });
   }
 };
 
-sectorsQuery.addEventListener('change', addSectorTabSlider);
-addSectorTabSlider(sectorsQuery);
+sectorsTabBtnsQuery.addEventListener('change', checkSectorsTabBtnsQuery);
+checkSectorsTabBtnsQuery(sectorsTabBtnsQuery);
 
-// sectorTabBtns.forEach((btn) => {
-//   btn.classList.remove('button--mid');
-//   btn.classList.add('button--sm');
-// });
-// sectorTabBtns.forEach((btn) => {
-//   btn.classList.add('button--mid');
-//   btn.classList.remove('button--sm');
-// });
-
-//*************** */
+//**************** */
 
 const bannerBtnContainer = document.querySelectorAll('.banner-card__btns');
 const bannerSliderQuery = window.matchMedia('(max-width: 992px)');

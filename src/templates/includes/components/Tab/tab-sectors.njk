@@ -4,6 +4,47 @@
 
 {% macro item(data) %}
   <div class="tab-sector">
+    <div class="tab-sector__header">
+      <div class="swiper sectorsTabSlider">
+        <div class="swiper-wrapper">
+          {% for item in data.tabButtons %}
+            {{Button.item(
+                text=item.text,
+                attr=item.attr,
+                buttonV2=true,
+                class= item.class
+              )}}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% for item in data.tabContents %}
+      <div class="tab-sector__content{%- if item.class %} {{ item.class }}{%- endif %}" id='{{ item.id }}'>
+        {{CommonCard.item(
+          img=item.img,
+          title=item.title,
+          desc=item.desc
+        )}}
+
+        <article>
+          <h3 class='section__title'>{{ item.refTitle }}</h3>
+          <p class='section__desc'>{{ item.refDesc }}</p>
+
+          <div>
+            {{SliderCustomers.item(
+              data= item.refItems
+            )}}
+            <div class="customers-slider-btn swiper-button-next"></div>
+            <div class="customers-slider-btn swiper-button-prev"></div>
+          </div>
+        </article>
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}
+
+{# {% macro item(data) %}
+  <div class="tab-sector">
     <div class='tab-sector__header'>
       <div class="swiper sectorsTabSlider">
         <div class="swiper-wrapper">
@@ -41,4 +82,4 @@
       </div>
     {% endfor %}
   </div>
-{% endmacro %}
+{% endmacro %} #}
