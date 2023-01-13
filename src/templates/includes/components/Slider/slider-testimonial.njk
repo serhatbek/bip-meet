@@ -5,11 +5,15 @@
     <div class="swiper-wrapper">
       {% for item in testimonialData %}
         {{TestimonialCard.item(
-    title:item.title,
-    img:item.img,
-    desc:item.desc
-  )}}
+          title=item.heading,
+          img=item.img,
+          desc=item.desc,
+          iconTop= item.topicon,
+          iconBottom= item.bottomicon,
+          addClass= 'swiper-slide'
+        )}}
       {% endfor %}
     </div>
+    <div class="swiper-pagination"></div>
   </div>
 {% endmacro %}

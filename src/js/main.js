@@ -155,7 +155,7 @@ const swiperMode = () => {
           },
         },
       });
-    } else {
+    } else if (!tablet.matches) {
       init = false;
       sectorTabSwiper.destroy();
     }
@@ -191,6 +191,30 @@ const checkSectorsTabBtnsQuery = (e) => {
 
 sectorsTabBtnsQuery.addEventListener('change', checkSectorsTabBtnsQuery);
 checkSectorsTabBtnsQuery(sectorsTabBtnsQuery);
+
+//**************** */
+const testimonialSlider = document.querySelector('.testimonialSwiper');
+let testimonialSwiper;
+if (testimonialSlider) {
+  console.log('first');
+  testimonialSwiper = new Swiper('.testimonialSwiper', {
+    spaceBetween: 300,
+    speed: 1100,
+    parallax: true,
+    loop: true,
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 7500,
+      disableOnInteraction: false,
+    },
+  });
+} else {
+  customersSwiper.destroy(true, true);
+}
 
 //**************** */
 

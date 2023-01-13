@@ -1,0 +1,103 @@
+.testimonial-card {
+  h3 {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.41;
+    color: $primary-dark-blue-level-0;
+    // margin-bottom: 18px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    > figure {
+      width: 146.9px;
+      height: 146.9px;
+      border: solid 2px rgba(3, 169, 244, 0.15);
+      border-radius: 50%;
+      background: linear-gradient(
+        to bottom,
+        $primary-dark-blue-light-9,
+        #f4f4f4
+      );
+      position: relative;
+
+      img {
+        width: 146.9px;
+        height: 146.9px;
+        border-radius: 50%;
+        width: 100%;
+      }
+
+      &::before {
+        content: '';
+        width: 160.3px;
+        height: 160.3px;
+        border: solid 2px rgba(3, 169, 244, 0.12);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &::after {
+        content: '';
+        width: 174.6px;
+        height: 174.6px;
+        border-radius: 50%;
+        position: absolute;
+        border: solid 2px rgba(3, 169, 244, 0.09);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    div {
+      max-width: 635px;
+      font-size: 24px;
+      color: $text-black;
+      line-height: 1;
+      position: relative;
+      padding-top: 111px;
+      padding-bottom: 94px;
+
+      > figure {
+        position: absolute;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .icon-top {
+        max-width: 140px;
+        top: 10px;
+        left: -61px;
+      }
+
+      .icon-bottom {
+        max-width: 141px;
+        right: -36px;
+        bottom: -18px;
+      }
+    }
+  }
+}
+
+.oval {
+  width: 160.3px;
+  height: 160.3px;
+  border: solid 2px rgba(3, 169, 244, 0.12);
+  border-radius: 50%;
+}
+
+oval-3 {
+  width: 174.6px;
+  height: 174.6px;
+  border-radius: 50%;
+  border: solid 2px rgba(3, 169, 244, 0.09);
+}

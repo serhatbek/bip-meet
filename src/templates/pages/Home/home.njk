@@ -4,8 +4,10 @@
 {% import "includes/components/Tab/tab-features.njk" as AccordionTab %}
 {% import "includes/components/Tab/tab-sectors.njk" as SectorsTab %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
+{% import "includes/components/Slider/slider-testimonial.njk" as SliderTestimonial %}
 
-{# {% set HeaderClass = 'sticky' %} #}
+{% set HeaderClass = 'sticky' %}
+
 {% set bannerItems = [
   {
     heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
@@ -343,13 +345,41 @@
 
 } %}
 
+{% set testimonialItems = [
+  {
+    heading: 'Lorem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }, {
+    heading: 'Norem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Korem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }, {
+    heading: 'Sorem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Dorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }, {
+    heading: 'Gorem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Borem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }
+] %}
+
 {% block content %}
   <section class="section section-banner">
     <div class="container">
       {{SliderBanner.item(
           data= bannerItems
         )}}
-      <div class="swiper-pagination"></div>
+      {# <div class="swiper-pagination"></div> #}
     </div>
   </section>
 
@@ -383,6 +413,12 @@
       {{SectorsTab.item(
         data=sectorsItems
       )}}
+    </div>
+  </section>
+
+  <section class="section section-testimonial">
+    <div class="container">
+      {{SliderTestimonial.item(testimonialData=testimonialItems)}}
     </div>
   </section>
 {% endblock %}
