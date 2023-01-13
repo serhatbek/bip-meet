@@ -79,7 +79,107 @@ window.addEventListener('scroll', () => {
   }
 });
 
-//******************* */
+//**************** */
+
+const bannerBtnContainer = document.querySelectorAll('.banner-card__btns');
+const bannerSliderQuery = window.matchMedia('(max-width: 992px)');
+
+if (bannerBtnContainer) {
+  const checkBannerSliderQuery = (e) => {
+    bannerBtnContainer.forEach((container) => {
+      if (e.matches && container.childElementCount >= 2) {
+        container.children[0].classList.add('button--v2', 'button--join');
+      } else {
+        container.children[0].classList.remove('button--v2', 'button--join');
+      }
+    });
+  };
+
+  bannerSliderQuery.addEventListener('change', checkBannerSliderQuery);
+  checkBannerSliderQuery(bannerSliderQuery);
+}
+
+//*************** */
+
+const copyrightYear = document.querySelector('#year');
+
+if (copyrightYear) {
+  copyrightYear.textContent = new Date().getFullYear();
+}
+
+//*************** */
+
+featuresTabItems = document.querySelectorAll('.accordiontab__item');
+
+const showTabPanel = (e) => {
+  let target = e.currentTarget;
+  if (!target.classList.contains('active')) {
+    featuresTabItems.forEach((tab) => tab.classList.remove('active'));
+    target.classList.add('active');
+  } else {
+    // target.classList.remove('active');
+  }
+};
+
+if (featuresTabItems) {
+  featuresTabItems.forEach((tab) => {
+    tab.addEventListener('click', (e) => {
+      showTabPanel(e);
+    });
+  });
+}
+
+tabInfoBtns = document.querySelectorAll('.tab-info-btn');
+const tabInfoBtnQuery = window.matchMedia('(max-width: 600px)');
+
+const checkTabInfoBtn = (e) => {
+  if (e.matches) {
+    tabInfoBtns.forEach((btn) => {
+      btn.classList.remove('button--download', 'button--download__underline');
+      btn.classList.add('button--xs');
+    });
+  } else {
+    tabInfoBtns.forEach((btn) => {
+      btn.classList.add('button--download', 'button--download__underline');
+      btn.classList.remove('button--xs');
+    });
+  }
+};
+if (tabInfoBtns) {
+  tabInfoBtnQuery.addEventListener('change', checkTabInfoBtn);
+}
+
+checkTabInfoBtn(tabInfoBtnQuery);
+
+//*************** */
+
+const sectorTabBtns = document.querySelectorAll('[data-tab-target]');
+const sectorTabContents = document.querySelectorAll('.tab-sector__content');
+
+const showSectorPanel = (e) => {
+  let tabId = e.target.dataset.tabTarget,
+    target = document.getElementById(tabId);
+
+  sectorTabBtns.forEach((btn) => {
+    btn.classList.remove('active');
+  });
+
+  sectorTabContents.forEach((panel) => {
+    panel.classList.remove('active');
+  });
+
+  e.target.classList.add('active');
+  target.classList.add('active');
+};
+
+if (sectorTabBtns) {
+  sectorTabBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => showSectorPanel(e));
+  });
+}
+
+//******************* */ Sliders
+
 const sliderBanner = document.querySelector('.slider-banner');
 let bannerSwiper;
 if (sliderBanner) {
@@ -214,103 +314,4 @@ if (testimonialSlider) {
   });
 } else {
   customersSwiper.destroy(true, true);
-}
-
-//**************** */
-
-const bannerBtnContainer = document.querySelectorAll('.banner-card__btns');
-const bannerSliderQuery = window.matchMedia('(max-width: 992px)');
-
-if (bannerBtnContainer) {
-  const checkBannerSliderQuery = (e) => {
-    bannerBtnContainer.forEach((container) => {
-      if (e.matches && container.childElementCount >= 2) {
-        container.children[0].classList.add('button--v2', 'button--join');
-      } else {
-        container.children[0].classList.remove('button--v2', 'button--join');
-      }
-    });
-  };
-
-  bannerSliderQuery.addEventListener('change', checkBannerSliderQuery);
-  checkBannerSliderQuery(bannerSliderQuery);
-}
-
-//*************** */
-
-const copyrightYear = document.querySelector('#year');
-
-if (copyrightYear) {
-  copyrightYear.textContent = new Date().getFullYear();
-}
-
-//*************** */
-
-featuresTabItems = document.querySelectorAll('.accordiontab__item');
-
-const showTabPanel = (e) => {
-  let target = e.currentTarget;
-  if (!target.classList.contains('active')) {
-    featuresTabItems.forEach((tab) => tab.classList.remove('active'));
-    target.classList.add('active');
-  } else {
-    // target.classList.remove('active');
-  }
-};
-
-if (featuresTabItems) {
-  featuresTabItems.forEach((tab) => {
-    tab.addEventListener('click', (e) => {
-      showTabPanel(e);
-    });
-  });
-}
-
-tabInfoBtns = document.querySelectorAll('.tab-info-btn');
-const tabInfoBtnQuery = window.matchMedia('(max-width: 600px)');
-
-const checkTabInfoBtn = (e) => {
-  if (e.matches) {
-    tabInfoBtns.forEach((btn) => {
-      btn.classList.remove('button--download', 'button--download__underline');
-      btn.classList.add('button--xs');
-    });
-  } else {
-    tabInfoBtns.forEach((btn) => {
-      btn.classList.add('button--download', 'button--download__underline');
-      btn.classList.remove('button--xs');
-    });
-  }
-};
-if (tabInfoBtns) {
-  tabInfoBtnQuery.addEventListener('change', checkTabInfoBtn);
-}
-
-checkTabInfoBtn(tabInfoBtnQuery);
-
-//*************** */
-
-const sectorTabBtns = document.querySelectorAll('[data-tab-target]');
-const sectorTabContents = document.querySelectorAll('.tab-sector__content');
-
-const showSectorPanel = (e) => {
-  let tabId = e.target.dataset.tabTarget,
-    target = document.getElementById(tabId);
-
-  sectorTabBtns.forEach((btn) => {
-    btn.classList.remove('active');
-  });
-
-  sectorTabContents.forEach((panel) => {
-    panel.classList.remove('active');
-  });
-
-  e.target.classList.add('active');
-  target.classList.add('active');
-};
-
-if (sectorTabBtns) {
-  sectorTabBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => showSectorPanel(e));
-  });
 }

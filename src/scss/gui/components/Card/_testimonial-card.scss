@@ -4,13 +4,23 @@
     font-weight: 500;
     line-height: 1.41;
     color: $primary-dark-blue-level-0;
-    // margin-bottom: 18px;
+    @include laptop {
+      margin-bottom: 44px;
+    }
+    @include phone {
+      line-height: 1.19;
+      font-size: 32px;
+    }
   }
 
   &__content {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    @include laptop {
+      flex-direction: column;
+    }
 
     > figure {
       width: 146.9px;
@@ -23,6 +33,10 @@
         #f4f4f4
       );
       position: relative;
+
+      @include laptop {
+        margin-bottom: 34px;
+      }
 
       img {
         width: 146.9px;
@@ -65,8 +79,24 @@
       padding-top: 111px;
       padding-bottom: 94px;
 
+      @include laptop {
+        padding-top: 0;
+        padding-bottom: 94px;
+      }
+
+      @include phone {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: center;
+        max-width: 294px;
+      }
+
       > figure {
         position: absolute;
+
+        @include laptop {
+          // display: none;
+        }
 
         img {
           width: 100%;
@@ -77,12 +107,23 @@
         max-width: 140px;
         top: 10px;
         left: -61px;
+        @include laptop {
+          max-width: 60px;
+          top: -51px;
+          left: -9px;
+        }
       }
 
       .icon-bottom {
         max-width: 141px;
         right: -36px;
         bottom: -18px;
+
+        @include laptop {
+          max-width: 60px;
+          right: 0px;
+          bottom: 70px;
+        }
       }
     }
   }
