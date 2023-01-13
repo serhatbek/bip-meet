@@ -1,0 +1,37 @@
+.blog-card {
+  width: 360px;
+  padding: 14px 14px 33px;
+  border-radius: 8px;
+  background: linear-gradient(
+    to bottom,
+    #f4f4f4,
+    $primary-dark-blue-light-9 -100%
+  );
+
+  figure {
+    max-width: 332px;
+    height: 288px;
+    margin-bottom: 32px;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  &__content {
+    h4 {
+      max-width: 295px;
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 500;
+      color: $primary-dark-blue-level-0;
+      margin-bottom: 24px;
+    }
+
+    p {
+      color: $text-black;
+      line-height: 1.5;
+    }
+  }
+}

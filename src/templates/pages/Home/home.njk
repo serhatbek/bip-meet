@@ -1,6 +1,7 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Card/offer-card.njk" as OfferCard %}
+{% import "includes/components/Card/blog-card.njk" as BlogCard %}
 {% import "includes/components/Tab/tab-features.njk" as AccordionTab %}
 {% import "includes/components/Tab/tab-sectors.njk" as SectorsTab %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
@@ -379,7 +380,6 @@
       {{SliderBanner.item(
           data= bannerItems
         )}}
-      {# <div class="swiper-pagination"></div> #}
     </div>
   </section>
 
@@ -419,6 +419,19 @@
   <section class="section section-testimonial">
     <div class="container">
       {{SliderTestimonial.item(testimonialData=testimonialItems)}}
+    </div>
+  </section>
+
+  <section class="section section-blog">
+    <h2></h2>
+    <div class="container">
+      <div class="box">
+        {{BlogCard.item(
+          img= 'https://source.unsplash.com/random/332x288',
+          title= 'Lorem ipsum dolor sit amet, consectetur adip',
+          desc= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+        )}}
+      </div>
     </div>
   </section>
 {% endblock %}
