@@ -1,0 +1,17 @@
+{% import "includes/components/Card/blog-card.njk" as BlogCard %}
+
+{% macro item(blogData) %}
+  <div class="swiper blogSwiper">
+    <div class="swiper-wrapper">
+      {% for item in blogData %}
+        {{BlogCard.item(
+          img=item.img,
+          title=item.title,
+          desc=item.desc,
+          addClass= 'swiper-slide'
+        )}}
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+{% endmacro %}

@@ -8,14 +8,32 @@
     $primary-dark-blue-light-9 -100%
   );
 
+  @include phone {
+    width: 286px;
+    padding: 11.1px 11.1px 12.1px;
+    border-radius: 6.4px;
+  }
+
   figure {
     max-width: 332px;
     height: 288px;
     margin-bottom: 32px;
+    background-color: $primary-dark-blue-light-3;
+    border-radius: 8px;
+    overflow: hidden;
+
+    @include phone {
+      max-width: 263.8px;
+      height: 229px;
+      margin-bottom: 16.8px;
+      border-radius: 6.4px;
+    }
 
     img {
       width: 100%;
-      border-radius: 8px;
+
+      // @include phone {
+      // }
     }
   }
 
@@ -27,11 +45,20 @@
       font-weight: 500;
       color: $primary-dark-blue-level-0;
       margin-bottom: 24px;
+
+      @include phone {
+        line-height: 1.26;
+        margin-bottom: 10.2px;
+      }
     }
 
     p {
       color: $text-black;
       line-height: 1.5;
+
+      @include phone {
+        line-height: 1.19;
+      }
     }
   }
 }
