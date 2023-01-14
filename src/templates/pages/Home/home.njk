@@ -6,6 +6,7 @@
 {% import "includes/components/Tab/tab-sectors.njk" as SectorsTab %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
 {% import "includes/components/Slider/slider-testimonial.njk" as SliderTestimonial %}
+{% import "includes/components/Slider/slider-blog.njk" as SliderBlog %}
 
 {% set HeaderClass = 'sticky' %}
 
@@ -374,6 +375,25 @@
   }
 ] %}
 
+{% set blogItems = [
+  {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    addClass:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    addClass:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    addClass:'swiper-slide'
+  }
+] %}
+
 {% block content %}
   <section class="section section-banner">
     <div class="container">
@@ -423,15 +443,12 @@
   </section>
 
   <section class="section section-blog">
-    <h2></h2>
     <div class="container">
+      <h2>Blog</h2>
       <div class="box">
-        {{BlogCard.item(
-          img= 'https://source.unsplash.com/random/332x288',
-          title= 'Lorem ipsum dolor sit amet, consectetur adip',
-          desc= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
-        )}}
+        {{SliderBlog.item(blogData=blogItems)}}
       </div>
+      <div class="section-blog__action"></div>
     </div>
   </section>
 {% endblock %}

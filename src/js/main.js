@@ -242,7 +242,8 @@ const swiperMode = () => {
       sectorTabSwiper = new Swiper('.sectorsTabSlider', {
         spaceBetween: 26,
         slidesPerView: 5,
-        speed: 1100,
+        centeredSlides: true,
+        // speed: 1100,
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
