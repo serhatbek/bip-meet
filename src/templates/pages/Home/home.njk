@@ -2,6 +2,7 @@
 {% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Card/offer-card.njk" as OfferCard %}
 {% import "includes/components/Card/blog-card.njk" as BlogCard %}
+{% import "includes/components/Card/video-card.njk" as VideoCard %}
 {% import "includes/components/Card/common-card.njk" as CommonCard %}
 {% import "includes/components/Tab/tab-features.njk" as AccordionTab %}
 {% import "includes/components/Tab/tab-sectors.njk" as SectorsTab %}
@@ -451,6 +452,28 @@
     <div class="container">
       {{SliderTestimonial.item(testimonialData=testimonialItems)}}
     </div>
+  </section>
+
+  {% set videoItems = [
+    {
+      img: 'https://source.unsplash.com/random/1440x402',
+      link: '/'
+    }, {
+      img: 'https://source.unsplash.com/random/1440x402',
+      link: '/'
+    }, {
+      img: 'https://source.unsplash.com/random/1440x402',
+      link: '/'
+    }
+  ] %}
+
+  <section class="section section-video">
+    {% for item in videoItems %}
+      {{VideoCard.item(
+        href=item.href,
+        img=item.img
+      )}}
+    {% endfor %}
   </section>
 
   <section class="section section-blog">
