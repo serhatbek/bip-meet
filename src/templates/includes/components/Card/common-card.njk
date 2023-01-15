@@ -1,11 +1,19 @@
-{% macro item(img, title, desc) %}
+{% macro item(img, title, desc, listCard, listItem) %}
   <div class='common-card'>
     <figure>
       <img src="{{ img }}" alt="{{ title }}">
     </figure>
     <div>
       <h3>{{ title }}</h3>
-      <p>{{ desc }}</p>
+      {% if listCard %}
+        <ul>
+          {% for item in listItem %}
+            <li>{{ listItem }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>{{ desc }}</p>
+      {% endif %}
     </div>
   </div>
 {% endmacro %}
