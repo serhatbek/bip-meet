@@ -306,7 +306,7 @@ if (testimonialSlider) {
     },
   });
 } else {
-  customersSwiper.destroy();
+  testimonialSwiper.destroy();
 }
 
 //****************** */
@@ -340,9 +340,34 @@ const addBlogSlider = (e) => {
   }
   if (!e.matches) {
     blogBtnContainer.style.display = 'block';
-    sectorTabSwiper.destroy(true, true);
+    blogSwiper.destroy(true, true);
   }
 };
 
 blogQuery.addEventListener('change', addBlogSlider);
 addBlogSlider(blogQuery);
+
+//********* */
+
+let videosSwiper;
+const videosSlider = document.querySelector('.videosSwiper');
+
+if (videosSlider) {
+  videosSwiper = new Swiper('.videosSwiper', {
+    spaceBetween: 500,
+    speed: 1100,
+    parallax: true,
+    loop: true,
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 7500,
+      disableOnInteraction: false,
+    },
+  });
+} else {
+  videosSwiper.destroy();
+}

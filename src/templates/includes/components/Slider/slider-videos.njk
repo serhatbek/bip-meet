@@ -1,0 +1,16 @@
+{% import "includes/components/Card/video-card.njk" as VideoCard %}
+
+{% macro item(videosData) %}
+  <div class="swiper videosSwiper">
+    <div class="swiper-wrapper">
+      {% for item in videosData %}
+        {{VideoCard.item(
+          href=item.href,
+          img=item.img,
+          class=item.class
+        )}}
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+{% endmacro %}
