@@ -1,15 +1,10 @@
 .blog-card {
-  width: 360px;
+  width: 360px !important;
   padding: 14px 14px 33px;
   border-radius: 8px;
-  background: linear-gradient(
-    to bottom,
-    #f4f4f4,
-    $primary-dark-blue-light-9 -100%
-  );
-
+  background: linear-gradient(to bottom, $bg, $primary-dark-blue-light-9);
   @include phone {
-    width: 286px;
+    width: 286px !important;
     padding: 11.1px 11.1px 12.1px;
     border-radius: 6.4px;
   }

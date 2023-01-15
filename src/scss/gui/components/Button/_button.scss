@@ -28,10 +28,16 @@
     padding: 12px 0;
   }
 
+  &--sm.button--tab {
+    min-width: 138px;
+    height: 40px;
+  }
+
   &--sm {
     min-width: 147px;
     height: 42px;
     border-radius: 21px;
+    line-height: 1.5;
   }
 
   &--join {

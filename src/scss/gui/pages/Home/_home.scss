@@ -83,12 +83,21 @@
 }
 
 .section-blog {
+  padding-top: 38px;
+  padding-bottom: 38px;
+  background-color: $bg;
   .container {
     .box {
+      margin-bottom: 46px;
+
       .swiper-wrapper {
         box-sizing: border-box;
         justify-content: space-between;
       }
     }
+  }
+
+  &__action {
+    text-align: center;
   }
 }
