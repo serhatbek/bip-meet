@@ -1,1 +1,10 @@
-{% macro item() %}{% endmacro %}
+{% macro item(href, img) %}
+  <div>
+    <a href="{{ href }}">
+      <figure>
+        <img src="{{ img }}">
+      </figure>
+      <div class="oval"></div>
+    </a>
+  </div>
+{% endmacro %}
