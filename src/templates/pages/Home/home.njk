@@ -2,6 +2,7 @@
 {% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Card/offer-card.njk" as OfferCard %}
 {% import "includes/components/Card/blog-card.njk" as BlogCard %}
+{% import "includes/components/Card/common-card.njk" as CommonCard %}
 {% import "includes/components/Tab/tab-features.njk" as AccordionTab %}
 {% import "includes/components/Tab/tab-sectors.njk" as SectorsTab %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
@@ -394,6 +395,16 @@
   }
 ] %}
 
+{% set suitItems = [
+  {
+    img:'https://source.unsplash.com/random/602x402',
+    title:'İşte Suit',
+    list: ['- Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur.','- Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur.','- Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur.'],
+    btnText:'Daha Fazla Bilgi',
+    btnLink:'/'
+  }
+] %}
+
 {% block content %}
   <section class="section section-banner">
     <div class="container">
@@ -455,6 +466,22 @@
           class='button--sm'
         )}}
       </div>
+    </div>
+  </section>
+
+  <section class="section section-suit">
+    <div class="container">
+      {% for item in suitItems %}
+        {{CommonCard.item(
+          img = item.img,
+          title = item.title,
+          class='common-card__list',
+          listCard = true,
+          listItem = item.list,
+          btnText = item.btnText, 
+          btnLink = item.btnLink
+        )}}
+      {% endfor %}
     </div>
   </section>
 {% endblock %}

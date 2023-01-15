@@ -10,6 +10,10 @@
     align-items: flex-start;
   }
 
+  &.common-card__list figure {
+    max-width: 602px;
+  }
+
   figure {
     max-width: 552px;
     margin-right: 27.5px;
@@ -24,6 +28,10 @@
       margin-bottom: 24px;
       margin-right: 0;
     }
+  }
+
+  &.common-card__list div {
+    max-width: 552px;
   }
 
   div {
@@ -47,6 +55,14 @@
 
       @include tablet {
         line-height: 1.25;
+      }
+    }
+
+    ul {
+      width: 100%;
+      li {
+        line-height: 1.5;
+        margin-bottom: 24px;
       }
     }
   }

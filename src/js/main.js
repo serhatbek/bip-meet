@@ -235,8 +235,6 @@ const addSectorTabSlider = (e) => {
     sectorTabSwiper = new Swiper('.sectorsTabSlider', {
       spaceBetween: 17,
       slidesPerView: 'auto',
-      // centeredSlides: true,
-      // speed: 1100,
       loop: true,
       loopedSlides: 5,
       navigation: {
@@ -262,18 +260,24 @@ addSectorTabSlider(sectorQuery);
 
 const sectorsTabBtnsQuery = window.matchMedia('(max-width: 600px)');
 const sectorSliderTabBtns = document.querySelectorAll('[data-tab-target]');
+const commonCardBtn = document.querySelector(
+  '.button--link.common-card__action'
+);
 
 const checkSectorsTabBtnsQuery = (e) => {
   if (e.matches) {
+    console.log(commonCardBtn);
     sectorSliderTabBtns.forEach((btn) => {
       btn.classList.remove('button--mid');
       btn.classList.add('button--sm', 'button--tab');
     });
+    commonCardBtn.style.display = 'none';
   } else {
     sectorSliderTabBtns.forEach((btn) => {
       btn.classList.add('button--mid');
       btn.classList.remove('button--sm', 'button--tab');
     });
+    commonCardBtn.style.display = 'inline-block';
   }
 };
 

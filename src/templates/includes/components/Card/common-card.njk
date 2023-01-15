@@ -1,5 +1,7 @@
-{% macro item(img, title, desc, listCard, listItem) %}
-  <div class='common-card'>
+{% import "includes/components/Button/button.njk" as Button %}
+
+{% macro item(img, title, desc, class, listCard, listItem, btnText, btnLink) %}
+  <div class='common-card{%- if class %} {{ class }}{%- endif %}'>
     <figure>
       <img src="{{ img }}" alt="{{ title }}">
     </figure>
@@ -8,12 +10,17 @@
       {% if listCard %}
         <ul>
           {% for item in listItem %}
-            <li>{{ listItem }}</li>
+            <li>{{ item }}</li>
           {% endfor %}
         </ul>
       {% else %}
         <p>{{ desc }}</p>
       {% endif %}
+      {{Button.item(
+        text=btnText,
+        href=btnLink,
+        class='button--sm common-card__action'
+      )}}
     </div>
   </div>
 {% endmacro %}
