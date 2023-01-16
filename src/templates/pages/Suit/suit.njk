@@ -1,5 +1,7 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
+{% import "includes/components/Card/offer-card.njk" as OfferCard %}
+{% import "includes/components/Card/common-card.njk" as CommonCard %}
 
 {% set bannerItems = [
   {
@@ -20,12 +22,77 @@
   }
 ] %}
 
+{% set offerCardItems = [
+  {
+    title: 'E-posta',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    img: 'https://source.unsplash.com/random/148x148'
+  }, {
+    title: 'Dosya Yedekleme ve Paylaşma',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    img: 'https://source.unsplash.com/random/148x148'
+  }, {
+    title: 'Kurumsal Veri Yönetimi',
+ desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    img: 'https://source.unsplash.com/random/148x148'
+  }, {
+    title: 'Ofis Uygulamaları',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    img: 'https://source.unsplash.com/random/148x148'
+  }, {
+    title: 'Video Konferans',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    img: 'https://source.unsplash.com/random/148x148'
+  }
+] %}
+
+{% set suitItems = [
+  {
+    img:'https://source.unsplash.com/random/602x402',
+    title:'İşte Suit',
+    list: ['- Dijital iş gücünü etkin kullanmaya başlarken,','- Çalışan deneyim ve iletişimini günümüz ihtiyaçlarına uygun yönetebilir.','- Üstelik yerli çözümlerimiz ile data güvenliği ve  mevzuat uyum avantajlarının yanında sabit maliyet avantajı sunar.'],
+    btnText:'Paketleri İncele',
+    btnLink:'../Suit/suit.html'
+  }
+] %}
+
 {% block content %}
   <section class="section section-banner">
     <div class="container">
       {{SliderBanner.item(
           data= bannerItems
         )}}
+    </div>
+  </section>
+
+  <section class="section page__suit section-offer">
+    <div class="container">
+      <h2 class='section__title'>Kurumların dijital ihtiyaçları artık tek pakette!</h2>
+      <div class="box">
+        {% for item in offerCardItems %}
+          {{OfferCard.item(
+            title=item.title,
+            desc=item.desc,
+            img=item.img
+          )}}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section page__suit section-suit">
+    <div class="container">
+      {% for item in suitItems %}
+        {{CommonCard.item(
+          img = item.img,
+          title = item.title,
+          class='common-card__list',
+          listCard = true,
+          listItem = item.list,
+          btnText = item.btnText, 
+          btnLink = item.btnLink
+        )}}
+      {% endfor %}
     </div>
   </section>
 {% endblock %}

@@ -32,6 +32,12 @@
 
   &.common-card__list div {
     max-width: 552px;
+
+    > div {
+      @include phone {
+        text-align: center;
+      }
+    }
   }
 
   div {

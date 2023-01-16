@@ -13,11 +13,13 @@
             <li>{{ item }}</li>
           {% endfor %}
         </ul>
-        {{Button.item(
-          text=btnText,
-          href=btnLink,
-          class='button--sm common-card__action'
-        )}}
+        <div>
+          {{Button.item(
+            text=btnText,
+            href=btnLink,
+            class='button--sm common-card__action'
+          )}}
+        </div>
       {% else %}
         <p>{{ desc }}</p>
       {% endif %}
