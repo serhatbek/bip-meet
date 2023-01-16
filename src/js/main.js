@@ -359,7 +359,7 @@ if (videosSlider) {
     speed: 1100,
     parallax: true,
     loop: true,
-
+    loopedSlides: 3,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

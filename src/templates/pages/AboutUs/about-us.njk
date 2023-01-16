@@ -1,3 +1,182 @@
 {% extends "includes/layout/layout.njk" %}
+{% import "includes/components/Button/button.njk" as Button %}
+{% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
+{% import "includes/components/Card/common-card.njk" as CommonCard %}
+{% import "includes/components/Slider/slider-customers.njk" as SliderCustomers %}
+{% import "includes/components/Slider/slider-testimonial.njk" as SliderTestimonial %}
+{% import "includes/components/Slider/slider-blog.njk" as SliderBlog %}
 
-{% block content %}{% endblock %}
+{% set bannerItems = [
+  {
+    heading: 'Hakkımızda',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    btnTextOne: 'Yazıyı Oku',
+    btnLink: '/',
+    img: 'https://source.unsplash.com/random/450x415'
+  }, {
+    heading: 'Hakkımızda',
+    desc: 'Morem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    btnTextOne: 'Yazıyı Oku',
+    btnLink: '/',
+    img: 'https://source.unsplash.com/random/450x415'
+  }, {
+    heading: 'Hakkımızda',
+    desc: 'Dorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    btnTextOne: 'Yazıyı Oku',
+    btnLink: '/',
+    img: 'https://source.unsplash.com/random/450x415'
+  }
+] %}
+
+{% set CardItems = {
+  img: 'https://source.unsplash.com/random/552x402',
+  title: 'Lorem ipsum dolor sit met, consectetur adip',
+  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+} %}
+
+{% set refItems = {
+  title:'Bip Meet’i tercih edenler',
+  desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+  sliderItems: [
+    {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76',
+      class:'swiper-slide'
+    },
+    {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76',
+      class:'swiper-slide'
+    },
+    {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76',
+      class:'swiper-slide'
+    },
+    {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76',
+      class:'swiper-slide'
+    },
+    {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76',
+      class:'swiper-slide'
+    },
+    {
+      title:'Milli Eğitim Bakanlığı',
+      img:'https://source.unsplash.com/random/76x76',
+      class:'swiper-slide'
+    }
+      ]
+} %}
+
+{% set testimonialItems = [
+  {
+    heading: 'Lorem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }, {
+    heading: 'Norem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Korem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }, {
+    heading: 'Sorem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Dorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }, {
+    heading: 'Gorem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Borem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }
+] %}
+
+{% set blogCardItems = [
+  {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }
+] %}
+
+{% set offerItems = {
+  title: 'Daha fazla özellikler ile iyi bir toplantı deneyiminin zamanı geldi.',
+  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+  btnTextOne: 'Paketleri İncele',
+  btnTextTwo: 'Giriş Yap'
+} %}
+
+{% block content %}
+  <section class="section section-banner">
+    <div class="container">
+      {{SliderBanner.item(
+          data= bannerItems
+        )}}
+    </div>
+  </section>
+
+  <section class="section page__aboutus section-card">
+    <div class="container">
+      {{CommonCard.item(
+          img= CardItems.img,
+          title= CardItems.title,
+          desc= CardItems.desc
+        )}}
+    </div>
+  </section>
+
+  <section class="section page__aboutus section-slider">
+    <div class="container">
+      <h3 class="section__title">{{ refItems.title }}</h3>
+      <p class="section__desc">{{ refItems.desc }}</p>
+      <div>
+        {{SliderCustomers.item(
+          data= refItems.sliderItems
+        )}}
+        <div class="customers-slider-btn swiper-button-next"></div>
+        <div class="customers-slider-btn swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section page__aboutus section-testimonial">
+    <div class="container">
+      {{SliderTestimonial.item(testimonialData= testimonialItems)}}
+    </div>
+  </section>
+
+  <section class="section page__aboutus section-blog">
+    <div class="container">
+      <h2 class="section__title">Lorem ipsum</h2>
+      <div class="box">
+        {{SliderBlog.item(blogData=blogCardItems)}}
+      </div>
+      <div class="section-blog__action">
+        {{Button.item(
+          text= 'Tümünü İncele',
+          href= '/',
+          class='button--sm'
+        )}}
+      </div>
+    </div>
+  </section>
+{% endblock %}
