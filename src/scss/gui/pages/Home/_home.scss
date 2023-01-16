@@ -82,6 +82,22 @@
   }
 }
 
+.section-video {
+  background-color: $bg;
+
+  .swiper {
+    padding: 38px 0;
+
+    .swiper-pagination {
+      bottom: 0 !important;
+    }
+
+    .swiper-pagination-bullet {
+      border: 1px solid $primary-blue;
+    }
+  }
+}
+
 .section-blog {
   padding-top: 38px;
   padding-bottom: 38px;

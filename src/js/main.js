@@ -203,8 +203,9 @@ if (sliderBanner) {
   bannerSwiper.destroy();
 }
 
-const sliderCustomers = document.querySelector('.slider-customers');
 let customersSwiper;
+const sliderCustomers = document.querySelector('.slider-customers');
+
 if (sliderCustomers) {
   customersSwiper = new Swiper('.slider-customers', {
     spaceBetween: 24,

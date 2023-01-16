@@ -7,16 +7,6 @@
     $primary-dark-blue-level-0 96%
   );
 
-  //   background-image: radial-gradient(
-  //     circle at 48% 55%,
-  //     rgba(32, 46, 62, 0),
-  //     $primary-dark-blue-level-0 96%
-  //   ),
-  //   url(https://source.unsplash.com/random/1440x402);
-  // background-size: auto;
-  // background-repeat: no-repeat;
-  // background-position: center;
-
   a {
     width: 100%;
     height: 100%;
@@ -51,6 +41,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    span {
+      display: block;
+    }
 
     &__left {
       width: 3.5px;
