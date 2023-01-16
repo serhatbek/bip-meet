@@ -1,0 +1,30 @@
+.page__blog.section-banner {
+  background: $primary-dark-blue-light-4;
+
+  @include laptop {
+    background: linear-gradient(to bottom, $primary-dark-blue-level-0, #435b72);
+  }
+
+  &::before {
+    content: '';
+    width: 58%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $primary-dark-blue-light-1;
+
+    @include laptop {
+      display: none;
+    }
+  }
+
+  .container {
+    .banner-card__img {
+      max-width: 672px;
+      img {
+        box-shadow: none;
+      }
+    }
+  }
+}

@@ -48,10 +48,14 @@
 
   &__img {
     max-width: 594px;
+    background-color: $primary-dark-blue-level-0;
+    border-radius: 12px;
+
     img {
       border-radius: 12px;
       box-shadow: 0 5px 13px 0 rgba(32, 46, 62, 0.72);
       width: 100%;
+      display: block;
     }
     @include laptop {
       order: 1;

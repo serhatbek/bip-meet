@@ -1,0 +1,46 @@
+.check-packages-card {
+  max-width: 936px;
+  border-radius: 12px;
+  border: 1px solid $primary-blue;
+  background-color: $text-white;
+  padding: 44px 68px;
+
+  @include phone {
+    padding: 42px 20px;
+    text-align: center;
+    min-width: 340px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 2;
+    color: $primary-dark-blue-level-0;
+    margin-bottom: 14px;
+
+    @include phone {
+      line-height: 1.25;
+    }
+  }
+
+  p {
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
+
+  &__action {
+    text-align: center;
+
+    @include phone {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    > a:first-child {
+      margin-right: 16px;
+      @include phone {
+        margin-right: 0;
+      }
+    }
+  }
+}

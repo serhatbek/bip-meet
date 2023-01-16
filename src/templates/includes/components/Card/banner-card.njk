@@ -1,7 +1,7 @@
 {# {% import "includes/components/Button/button.njk" as Button %} #}
 
 {% macro item(title, desc, img, class) %}
-  <div class="banner-card {%- if class %} {{ class }}{% endif -%}">
+  <div class="banner-card{%- if class %} {{ class }}{% endif -%}">
     <div class="banner-card__content">
       <h1 data-swiper-parallax="-600">{{ title }}</h1>
       <p data-swiper-parallax="-300">{{ desc }}</p>
