@@ -203,6 +203,8 @@ if (sliderBanner) {
   bannerSwiper.destroy();
 }
 
+//******************** */
+
 let customersSwiper;
 const sliderCustomers = document.querySelector('.slider-customers');
 
@@ -259,7 +261,9 @@ addSectorTabSlider(sectorQuery);
 
 //****************** */
 
-const sectorsTabBtnsQuery = window.matchMedia('(max-width: 600px)');
+const sectorsTabBtnsQuery = window.matchMedia(
+  '(min-width: 0px) and (max-width: 600px)'
+);
 const sectorSliderTabBtns = document.querySelectorAll('[data-tab-target]');
 const commonCardBtn = document.querySelector(
   '.button--link.common-card__action'
@@ -296,7 +300,7 @@ if (testimonialSlider) {
     speed: 1100,
     parallax: true,
     loop: true,
-
+    observer: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -313,20 +317,21 @@ if (testimonialSlider) {
 //****************** */
 
 let blogSwiper;
-const blogQuery = window.matchMedia('(max-width:1150px)');
+const blogQuery = window.matchMedia('(min-width: 0px) and (max-width:1150px)');
 const sliderBlog = document.querySelector('.blogSwiper');
 const blogBtnContainer = document.querySelector('.section-blog__action');
 
 const addBlogSlider = (e) => {
-  if (e.matches) {
+  if (e.matches && sliderBlog) {
     blogBtnContainer.style.display = 'none';
-
+    console.log('object');
     blogSwiper = new Swiper('.blogSwiper', {
       spaceBetween: 25,
       slidesPerView: 'auto',
       speed: 1100,
       loop: true,
       loopedSlides: 3,
+      observer: true,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -338,8 +343,7 @@ const addBlogSlider = (e) => {
         },
       },
     });
-  }
-  if (!e.matches) {
+  } else {
     blogBtnContainer.style.display = 'block';
     blogSwiper.destroy(true, true);
   }
@@ -357,9 +361,9 @@ if (videosSlider) {
   videosSwiper = new Swiper('.videosSwiper', {
     spaceBetween: 500,
     speed: 1100,
-    parallax: true,
     loop: true,
     loopedSlides: 3,
+    observer: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

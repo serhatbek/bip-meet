@@ -1,11 +1,13 @@
 {% extends "includes/layout/layout.njk" %}
+{% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
+{% import "includes/components/Slider/slider-blog.njk" as SliderBlog %}
 
 {% set bannerItems = [
   {
-    heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    heading: 'Her sektör için video etkileşimi',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
-    btnTextOne: 'Yazıyı Oku',
+    btnTextOne: 'Planları Görüntüle',
     btnLink: '/',
     img: 'https://source.unsplash.com/random/672x448'
   }, {
@@ -23,12 +25,127 @@
   }
 ] %}
 
+{% set blogItems1 = [
+  {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }
+] %}
+
+{% set blogItems2 = [
+  {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }
+] %}
+
+{% set blogItems3 = [
+  {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }
+] %}
+
+{% set blogItem4 = [
+  {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide'
+  }
+] %}
+
 {% block content %}
   <section class="section page__blog section-banner">
     <div class="container">
       {{SliderBanner.item(
           data= bannerItems
         )}}
+    </div>
+  </section>
+
+  <section class="section page__blog section-blog">
+    <div class="container">
+      <div class="box">
+        {{SliderBlog.item(blogData=blogItems1)}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section page__blog section-blog">
+    <div class="container">
+      <div class="box">
+        {{SliderBlog.item(blogData=blogItems2)}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section page__blog section-blog">
+    <div class="container">
+      <div class="box">
+        {{SliderBlog.item(blogData=blogItems3)}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section page__blog section-blog">
+    <div class="container">
+      <div class="box">
+        {{SliderBlog.item(blogData=blogItems4)}}
+      </div>
+      <div class="section-blog__action">
+        {{Button.item(
+          text= 'Tümünü İncele',
+          href= '../Blog/blog.html',
+          class='button--sm'
+        )}}
+      </div>
     </div>
   </section>
 {% endblock %}
