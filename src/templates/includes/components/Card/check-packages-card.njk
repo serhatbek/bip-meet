@@ -1,17 +1,25 @@
 {% import "includes/components/Button/button.njk" as Button %}
 
-{% macro item(packData) %}
-  <div class="check-packages-card">
-    <h3>{{ packData.title }}</h3>
-    <p>{{ packData.desc }}</p>
-    <div class="check-packages-card__action">
-      {% for item in packData.btns %}
-        {{Button.item(
+{% macro item(packData, cardv2) %}
+
+  <div class="check-packages-card{%- if cardv2 %} check-packages-card--large{%- endif %}">
+    {% if packData.img %}
+      <figure>
+        <img src="{{ packData.img }}">
+      </figure>
+    {% endif %}
+    <div>
+      <h3>{{ packData.title }}</h3>
+      <p>{{ packData.desc }}</p>
+      <div class="check-packages-card__action">
+        {% for item in packData.btns %}
+          {{Button.item(
           text= item.text,
           href= item.link,
           class=item.class
         )}}
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 {% endmacro %}

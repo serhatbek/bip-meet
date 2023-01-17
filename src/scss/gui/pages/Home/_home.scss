@@ -104,11 +104,12 @@
   background-color: $bg;
   .container {
     .box {
-      margin-bottom: 46px;
+      // margin-bottom: 46px;
 
       .swiper-wrapper {
         box-sizing: border-box;
         justify-content: space-between;
+        padding-bottom: 46px;
       }
     }
   }

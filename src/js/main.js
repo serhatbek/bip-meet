@@ -200,7 +200,7 @@ if (sliderBanner) {
     },
   });
 } else {
-  bannerSwiper.destroy();
+  // bannerSwiper.destroy();
 }
 
 //******************** */
@@ -222,7 +222,7 @@ if (sliderCustomers) {
     },
   });
 } else {
-  customersSwiper.destroy(true, true);
+  // customersSwiper.destroy(true, true);
 }
 
 //****************** */
@@ -252,7 +252,7 @@ const addSectorTabSlider = (e) => {
       },
     });
   } else {
-    sectorTabSwiper.destroy();
+    // sectorTabSwiper.destroy();
   }
 };
 
@@ -265,29 +265,46 @@ const sectorsTabBtnsQuery = window.matchMedia(
   '(min-width: 0px) and (max-width: 600px)'
 );
 const sectorSliderTabBtns = document.querySelectorAll('[data-tab-target]');
-const commonCardBtn = document.querySelector(
-  '.button--link.common-card__action'
-);
 
 const checkSectorsTabBtnsQuery = (e) => {
   if (e.matches) {
-    console.log(commonCardBtn);
     sectorSliderTabBtns.forEach((btn) => {
       btn.classList.remove('button--mid');
       btn.classList.add('button--sm', 'button--tab');
     });
-    commonCardBtn.style.display = 'none';
   } else {
     sectorSliderTabBtns.forEach((btn) => {
       btn.classList.add('button--mid');
       btn.classList.remove('button--sm', 'button--tab');
     });
+  }
+};
+
+if (typeof sectorSliderTabBtns != 'undefined' && sectorSliderTabBtns != null) {
+  sectorsTabBtnsQuery.addEventListener('change', checkSectorsTabBtnsQuery);
+  checkSectorsTabBtnsQuery(sectorsTabBtnsQuery);
+}
+
+//**************** */
+const commonCardBtn = document.querySelector(
+  '.button--link.common-card__action'
+);
+const commonCardBtnQuery = window.matchMedia(
+  '(min-width: 0px) and (max-width: 600px)'
+);
+
+const toggleCommonCardBtn = (e) => {
+  if (e.matches) {
+    commonCardBtn.style.display = 'none';
+  } else {
     commonCardBtn.style.display = 'inline-block';
   }
 };
 
-sectorsTabBtnsQuery.addEventListener('change', checkSectorsTabBtnsQuery);
-checkSectorsTabBtnsQuery(sectorsTabBtnsQuery);
+if (commonCardBtn) {
+  commonCardBtnQuery.addEventListener('change', toggleCommonCardBtn);
+  toggleCommonCardBtn(commonCardBtnQuery);
+}
 
 //**************** */
 
@@ -311,7 +328,7 @@ if (testimonialSlider) {
     },
   });
 } else {
-  testimonialSwiper.destroy();
+  // testimonialSwiper.destroy();
 }
 
 //****************** */
@@ -345,7 +362,7 @@ const addBlogSlider = (e) => {
     });
   } else {
     blogBtnContainer.style.display = 'block';
-    blogSwiper.destroy(true, true);
+    // blogSwiper.destroy(true, true);
   }
 };
 
@@ -374,5 +391,28 @@ if (videosSlider) {
     },
   });
 } else {
-  videosSwiper.destroy();
+  // videosSwiper.destroy();
+}
+
+//********** */
+
+const packBtns = document.querySelectorAll('.check-packages-card__action a');
+const packBtnQuery = window.matchMedia('(max-width: 992px)');
+
+const checkPackBtn = (e) => {
+  if (e.matches) {
+    packBtns.forEach((btn) => {
+      btn.classList.remove('button--sm');
+      btn.classList.add('button--xs');
+    });
+  } else {
+    packBtns.forEach((btn) => {
+      btn.classList.add('button--sm');
+      btn.classList.remove('button--xs');
+    });
+  }
+};
+if (packBtns) {
+  packBtnQuery.addEventListener('change', checkPackBtn);
+  checkPackBtn(packBtnQuery);
 }

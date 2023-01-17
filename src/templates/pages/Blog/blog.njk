@@ -2,6 +2,7 @@
 {% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
 {% import "includes/components/Slider/slider-blog.njk" as SliderBlog %}
+{% import "includes/components/Card/check-packages-card.njk" as PackCard %}
 
 {% set bannerItems = [
   {
@@ -101,6 +102,23 @@
   }
 ] %}
 
+{% set offerItems2 = {
+  title: 'Daha fazla özellikler ile iyi bir toplantı deneyiminin zamanı geldi.',
+  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+  img: 'https://source.unsplash.com/random/1128x352',
+  btns: [
+    {
+      text: 'Paketleri İncele',
+      link: '/',
+      class: 'button--sm button--v2'
+    }, {
+      text: 'Giriş Yap',
+      link: '/',
+      class: 'button--sm'
+    }
+  ]
+} %}
+
 {% block content %}
   <section class="section page__blog section-banner">
     <div class="container">
@@ -126,6 +144,15 @@
     </div>
   </section>
 
+  <section class="section page__blog section-check-packages">
+    <div class="container">
+      {{PackCard.item(
+        packData= offerItems2,
+        cardv2= 'true'
+      )}}
+    </div>
+  </section>
+
   <section class="section page__blog section-blog">
     <div class="container">
       <div class="box">
@@ -137,7 +164,7 @@
   <section class="section page__blog section-blog">
     <div class="container">
       <div class="box">
-        {{SliderBlog.item(blogData=blogItems4)}}
+        {{SliderBlog.item(blogData=blogItem4)}}
       </div>
       <div class="section-blog__action">
         {{Button.item(

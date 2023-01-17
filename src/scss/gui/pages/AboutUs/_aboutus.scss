@@ -35,6 +35,16 @@
   }
 }
 
+.page__aboutus.section-blog {
+  .box {
+    margin-bottom: 0;
+
+    .swiper-wrapper {
+      padding-bottom: 46px;
+    }
+  }
+}
+
 .page__aboutus.section-check-packages {
   padding: 46px 0;
 

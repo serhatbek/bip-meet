@@ -48,3 +48,13 @@
     padding-bottom: 55px;
   }
 }
+
+.page__blog.section-check-packages {
+  background-color: $bg;
+
+  .container {
+    @include phone {
+      padding: 0;
+    }
+  }
+}
