@@ -1,5 +1,6 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
+{% import "includes/components/Card/features-card.njk" as FeaturesCard %}
 
 {% set bannerItems = [
   {
@@ -57,6 +58,20 @@
       {{SliderBanner.item(
           data= bannerItems
         )}}
+    </div>
+  </section>
+
+  <section class="section section-features-cards">
+    <div class="container">
+      <div class="box">
+        {% for item in featureCardItems %}
+          {{FeaturesCard.item(
+            img= item.img,
+            title= item.title,
+            desc= item.desc
+          )}}
+        {% endfor %}
+      </div>
     </div>
   </section>
 {% endblock %}

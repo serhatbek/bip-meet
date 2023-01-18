@@ -1,0 +1,22 @@
+.section-features-cards {
+  background-color: $bg;
+  padding-top: 48px;
+
+  @include phone {
+    padding-top: 46px;
+    padding-bottom: 29px;
+  }
+
+  .container {
+    .box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+
+      @include phone {
+        gap: 16px;
+      }
+    }
+  }
+}
