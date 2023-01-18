@@ -1,0 +1,15 @@
+.features-detail-cards {
+  padding: 46px 0;
+
+  .container {
+    @include phone {
+      padding: 0;
+    }
+  }
+
+  .box {
+    .common-card:not(:last-child) {
+      margin-bottom: 46px;
+    }
+  }
+}

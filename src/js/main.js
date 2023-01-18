@@ -429,3 +429,28 @@ if (packBtns) {
   packBtnQuery.addEventListener('change', checkPackBtn);
   checkPackBtn(packBtnQuery);
 }
+
+//********************* */
+const featureDetailCardQuery = window.matchMedia(
+  '(min-width: 0px) and (max-width:600px)'
+);
+const featureDetailCards = document.querySelectorAll(
+  '.common-card.common-card--small figure img'
+);
+
+const changeImgUrl = (e) => {
+  if (e.matches) {
+    featureDetailCards[0].src = 'https://source.unsplash.com/random/375x236';
+    featureDetailCards[1].src = 'https://source.unsplash.com/random/375x236';
+    featureDetailCards[2].src = 'https://source.unsplash.com/random/375x236';
+  } else {
+    featureDetailCards[0].src = 'https://source.unsplash.com/random/552x236';
+    featureDetailCards[1].src = 'https://source.unsplash.com/random/552x236';
+    featureDetailCards[2].src = 'https://source.unsplash.com/random/552x236';
+  }
+};
+
+if (featureDetailCards) {
+  featureDetailCardQuery.addEventListener('change', changeImgUrl);
+  changeImgUrl(featureDetailCardQuery);
+}

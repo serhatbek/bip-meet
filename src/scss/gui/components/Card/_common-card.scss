@@ -72,4 +72,88 @@
       }
     }
   }
+
+  &--small {
+    justify-content: center;
+
+    @include laptop {
+      flex-direction: column;
+
+      &:nth-child(even) {
+        figure {
+          order: 2;
+          margin-right: 0;
+        }
+
+        > div {
+          order: 1;
+        }
+      }
+    }
+
+    @include phone {
+      align-items: center;
+    }
+
+    figure {
+      max-width: 552px;
+
+      @include laptop {
+        margin-right: 0;
+      }
+
+      @include phone {
+        margin-bottom: 0;
+      }
+
+      img {
+        @include phone {
+          border-radius: 0px;
+        }
+      }
+    }
+
+    > div {
+      margin-right: 26px;
+      max-width: 360px;
+
+      @include laptop {
+        margin-right: 0;
+      }
+
+      @include phone {
+        padding: 0 12px;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: normal;
+        margin-bottom: 9px;
+        @include laptop {
+          margin-bottom: 8px;
+        }
+      }
+
+      p {
+        @include laptop {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    figure {
+      order: 2;
+      margin-right: 26px;
+
+      @include laptop {
+        margin-right: 0;
+      }
+    }
+
+    > div {
+      order: 1;
+    }
+  }
 }

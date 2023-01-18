@@ -1,5 +1,6 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
+{% import "includes/components/Card/common-card.njk" as CommonCard %}
 
 {% set bannerItems = [
   {
@@ -23,12 +24,43 @@
   }
 ] %}
 
+{% set detailCardItems = [
+  {
+    img: 'https://source.unsplash.com/random/552x236',
+    title: 'Öğrencilerle Kesintisiz İletişim',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+  }, {
+    img: 'https://source.unsplash.com/random/552x236',
+    title: 'Herkese, her yerde öğretim',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+  }, {
+    img: 'https://source.unsplash.com/random/552x236',
+    title: 'Kolay İşbirliği',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.'
+  }
+] %}
+
 {% block content %}
   <section class="section section-banner--split section-banner">
     <div class="container container__wide">
       {{SliderBanner.item(
           data= bannerItems
         )}}
+    </div>
+  </section>
+
+  <section class="section features-detail-cards">
+    <div class="container">
+      <div class="box">
+        {% for item in detailCardItems %}
+          {{CommonCard.item(
+          img = item.img,
+          title = item.title,
+          desc = item.desc,
+          class = 'common-card--small'
+        )}}
+        {% endfor %}
+      </div>
     </div>
   </section>
 {% endblock %}
