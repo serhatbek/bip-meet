@@ -23,8 +23,36 @@
   }
 ] %}
 
+{% set featureCardItems = [
+  {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Online Konferans',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit'
+  }, {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Online Konferans',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit'
+  }, {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Online Konferans',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit'
+  }, {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Online Konferans',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit'
+  }, {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Online Konferans',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit'
+  }, {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Online Konferans',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit'
+  }
+] %}
+
 {% block content %}
-  <section class="section page__blog section-banner">
+  <section class="section section-banner--split section-banner">
     <div class="container container__wide">
       {{SliderBanner.item(
           data= bannerItems

@@ -2,7 +2,7 @@
   background-color: $bg;
 }
 
-.page__blog.section-banner {
+.section-banner--split.section-banner {
   background: $primary-dark-blue-light-4;
 
   @include laptop {
@@ -25,13 +25,12 @@
 
   .container {
     .banner-card__content {
-      position: relative;
-      left: 24px;
       max-width: 485px;
 
       @include tablet {
-        left: 0;
+        max-width: 100%;
       }
+
       p {
         width: 516px;
         z-index: 2;
