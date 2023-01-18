@@ -30,6 +30,11 @@
 
   div {
     padding: 30px 18px 37px 18px;
+
+    @include phone {
+      padding-bottom: 35px;
+    }
+
     h4 {
       font-size: 24px;
       font-weight: 500;
