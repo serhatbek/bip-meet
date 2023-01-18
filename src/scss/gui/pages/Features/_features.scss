@@ -20,3 +20,14 @@
     }
   }
 }
+
+.section-pack-card {
+  background-color: $bg;
+  padding: 46px 0;
+
+  .container {
+    .check-packages-card {
+      margin: 0 auto;
+    }
+  }
+}
