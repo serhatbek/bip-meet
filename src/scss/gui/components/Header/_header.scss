@@ -11,6 +11,10 @@
     padding-bottom: 21px;
   }
 
+  &__dark {
+    background: $primary-dark-blue-light-1;
+  }
+
   &.active {
     background: $primary-dark-blue-level-0;
   }

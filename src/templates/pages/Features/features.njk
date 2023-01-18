@@ -1,3 +1,34 @@
 {% extends "includes/layout/layout.njk" %}
+{% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
 
-{% block content %}{% endblock %}
+{% set bannerItems = [
+  {
+    heading: 'Özellikler',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    btnTextOne: 'Toplantıyı Başlat',
+    btnLink: '/',
+    img: 'https://source.unsplash.com/random/672x448'
+  }, {
+    heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    desc: 'Morem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    btnTextOne: 'Toplantıyı Başlat',
+    btnLink: '/',
+    img: 'https://source.unsplash.com/random/672x448'
+  }, {
+    heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    desc: 'Dorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    btnTextOne: 'Toplantıyı Başlat',
+    btnLink: '/',
+    img: 'https://source.unsplash.com/random/672x448'
+  }
+] %}
+
+{% block content %}
+  <section class="section page__blog section-banner">
+    <div class="container container__wide">
+      {{SliderBanner.item(
+          data= bannerItems
+        )}}
+    </div>
+  </section>
+{% endblock %}
