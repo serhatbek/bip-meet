@@ -1,88 +1,29 @@
 .video-card {
-  // width: 100%;
-  // min-height: 402px;
-  background-image: radial-gradient(
-    circle at 48% 55%,
-    rgba(32, 46, 62, 0),
-    $primary-dark-blue-level-0 96%
-  );
-
+  $self: &;
   a {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    display: block;
-    z-index: -1;
+    background-image: radial-gradient(
+      circle at 48% 55%,
+      rgba(32, 46, 62, 0),
+      $primary-dark-blue-level-0 96%
+    );
+    max-height: 402px;
+    position: relative;
 
-    figure {
-      position: relative;
-      z-index: -1;
-      cursor: pointer;
-      max-width: 1440px;
-      margin: 0 auto;
+    #{$self}__img {
+      width: 100%;
+    }
+
+    #{$self}__icon {
+      height: 70px;
+      width: 70px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
       img {
-        display: block;
-        min-height: 402px;
         width: 100%;
       }
     }
-  }
-
-  .oval {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    border: 3.5px solid $primary-blue;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    span {
-      display: block;
-    }
-
-    &__left {
-      width: 3.5px;
-      height: 36.1px;
-      background-color: $primary-blue;
-      margin-right: 24.3px;
-      // border-radius: 4px;
-    }
-
-    &__top {
-      height: 3.5px;
-      width: 36.1px;
-      background-color: $primary-blue;
-      position: absolute;
-      transform: rotate(34deg);
-      top: 22px;
-      right: 10px;
-      // border-radius: 4px;
-    }
-
-    &__bottom {
-      height: 3.5px;
-      width: 36.1px;
-      background-color: $primary-blue;
-      transform: rotate(151deg);
-      top: 39px;
-      right: 11px;
-      position: absolute;
-      // border-radius: 4px;
-    }
-
-    // &::before {
-    //   content: '';
-    //   width: 24.5px;
-    //   height: 36.1px;
-    //   border-top: 3.5px solid $primary-blue;
-    //   border-left: 3.5px solid $primary-blue;
-    //   border-bottom: 3.5px solid $primary-blue;
-    // }
   }
 }

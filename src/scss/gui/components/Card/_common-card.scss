@@ -140,20 +140,20 @@
         }
       }
     }
-  }
 
-  &:nth-child(odd) {
-    figure {
-      order: 2;
-      margin-right: 26px;
+    &:nth-child(odd) {
+      figure {
+        order: 2;
+        margin-right: 26px;
 
-      @include laptop {
-        margin-right: 0;
+        @include laptop {
+          margin-right: 0;
+        }
       }
-    }
 
-    > div {
-      order: 1;
+      > div {
+        order: 1;
+      }
     }
   }
 }

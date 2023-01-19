@@ -1,14 +1,12 @@
-{% macro item(href, img, class) %}
+{% macro item(href, img, icon, class) %}
   <div class="video-card{%- if class %} {{ class }}{%- endif %}">
     <a href="{{ href }}">
-      <figure>
+      <figure class="video-card__img">
         <img src="{{ img }}">
       </figure>
-      <div class="oval">
-        <span class="oval__top"></span>
-        <span class="oval__left"></span>
-        <span class="oval__bottom"></span>
-      </div>
+      <figure class="video-card__icon">
+        <img src="{{ icon }}">
+      </figure>
     </a>
   </div>
 {% endmacro %}

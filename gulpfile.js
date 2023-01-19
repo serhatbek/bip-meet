@@ -8,7 +8,7 @@ const notify = require('gulp-notify');
 const nunjucksRender = require('gulp-nunjucks-render');
 
 const copyImages = () => {
-  return src('src/images/*.{webp,jpeg,png,svg}').pipe(
+  return src('src/images/*.{webp,jpg,jpeg,png,svg}').pipe(
     dest('dist/assets/images')
   );
 };
@@ -73,7 +73,7 @@ const watchTasks = () => {
     [
       'src/scss/**/*.scss',
       'src/js/*.js',
-      'src/images/*.{webp,jpeg,png,svg}',
+      'src/images/*.{webp,jpeg,jpg,png,svg}',
       'src/fonts/*.ttf',
     ],
     parallel(
