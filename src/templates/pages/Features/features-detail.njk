@@ -2,6 +2,7 @@
 {% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Accordion/accordion.njk" as Accordion %}
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
+{% import "includes/components/Slider/slider-features-detail.njk" as SliderFeaturesDetail %}
 {% import "includes/components/Card/common-card.njk" as CommonCard %}
 
 {% set bannerItems = [
@@ -60,6 +61,30 @@
   }
 ] %}
 
+{% set featuresDeatailCardItems = [
+  {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'features-card--small'
+  }, {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'features-card--small'
+  }, {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'features-card--small'
+  }, {
+    img: 'https://source.unsplash.com/random/360x236',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'features-card--small'
+  }
+] %}
+
 {% block content %}
   <section class="section section-banner--split section-banner">
     <div class="container container__wide">
@@ -97,5 +122,9 @@
         )}}
       </div>
     </div>
+  </section>
+
+  <section class="section">
+    {{SliderFeaturesDetail.item(detailCardData= featuresDeatailCardItems)}}
   </section>
 {% endblock %}

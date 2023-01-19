@@ -50,11 +50,16 @@
   &--small {
     position: relative;
 
+    &:hover div {
+      bottom: -30px;
+    }
+
     div {
       position: absolute;
       left: 0;
-      bottom: -81px;
+      bottom: -110px;
       right: 0;
+      transition: all 300ms ease-in-out;
     }
   }
 }

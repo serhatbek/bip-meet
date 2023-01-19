@@ -1,0 +1,17 @@
+{% import "includes/components/Card/features-card.njk" as FeaturesCard %}
+
+{% macro item(detailCardData) %}
+  <div class="swiper feature-detail-slider">
+    <div class="swiper-wrapper">
+      {% for item in detailCardData %}
+        {{FeaturesCard.item(
+          img=item.img,
+          title=item.title,
+          desc=item.desc,
+          class= item.class
+        )}}
+      {% endfor %}
+    </div>
+    {# <div class="swiper-pagination"></div> #}
+  </div>
+{% endmacro %}
