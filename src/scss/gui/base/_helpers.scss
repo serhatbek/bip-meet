@@ -6,6 +6,11 @@
   &__wide {
     max-width: 1202px;
   }
+
+  &__left-auto {
+    padding-left: 200px;
+    margin: 0;
+  }
 }
 
 .overflowHidden {

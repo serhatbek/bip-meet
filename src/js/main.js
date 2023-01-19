@@ -474,3 +474,42 @@ if (accordionItems !== null) {
     item.addEventListener('click', (e) => toggleAccordionBody(e));
   });
 }
+
+//******************* */
+let featuresDetailSwiper;
+const featuresDetailSlider = document.querySelector('.feature-detail-slider');
+const sectionFeaturesDetail = document.querySelector('.section-detail-slider');
+
+if (featuresDetailSlider) {
+  featuresDetailSwiper = new Swiper('.feature-detail-slider', {
+    spaceBetween: 24,
+    slidesPerView: 'auto',
+    speed: 1100,
+    loop: true,
+    loopedSlides: 4,
+    observer: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 7500,
+      disableOnInteraction: false,
+    },
+  });
+} else {
+  // videosSwiper.destroy();
+}
+
+const removeSectionFeatures = (e) => {
+  if (e.matches) {
+    sectionFeaturesDetail.style.display = 'none';
+  } else {
+    sectionFeaturesDetail.style.display = 'block';
+  }
+};
+
+if (sectionFeaturesDetail) {
+  blogQuery.addEventListener('change', removeSectionFeatures);
+  removeSectionFeatures(blogQuery);
+}
