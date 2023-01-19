@@ -46,4 +46,15 @@
       line-height: 1.5;
     }
   }
+
+  &--small {
+    position: relative;
+
+    div {
+      position: absolute;
+      left: 0;
+      bottom: -81px;
+      right: 0;
+    }
+  }
 }

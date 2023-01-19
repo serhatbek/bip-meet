@@ -1,4 +1,6 @@
 .features-detail-cards {
+  background-color: $bg;
+
   padding: 46px 0;
 
   .container {
@@ -11,5 +13,13 @@
     .common-card:not(:last-child) {
       margin-bottom: 46px;
     }
+  }
+}
+
+.section-sss {
+  background-color: $bg;
+
+  &__action {
+    padding: 23px 0;
   }
 }

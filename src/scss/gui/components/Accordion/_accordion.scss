@@ -1,0 +1,50 @@
+.accordion {
+  &__item.active &__item-header figure {
+    transform: rotate(180deg);
+  }
+
+  &__item.active &__item-body {
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  &__item {
+    border-bottom: 2px solid $primary-dark-blue-light-7;
+
+    &-header {
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        font-size: 24px;
+        line-height: 1.38;
+        font-weight: bold;
+        color: $text-black;
+
+        @include phone {
+          line-height: 1.38;
+        }
+      }
+
+      figure {
+        width: 32px;
+        height: 32px;
+        transition: all 0.2s ease-out;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    &-body {
+      color: $text-black;
+      line-height: 1.5;
+      height: 0;
+      overflow: hidden;
+      transition: all 0.2s ease-out;
+    }
+  }
+}

@@ -15,7 +15,6 @@ if (dropdownItems) {
       dropdownBtns.forEach((btn) => {
         btn.classList.remove('active');
         navOverlay.classList.remove('active');
-        body.classList.remove('overflowHidden');
       });
     }
   });
@@ -339,7 +338,6 @@ const sliderBlog = document.querySelector('.blogSwiper');
 
 const addBlogSlider = (e) => {
   if (e.matches && sliderBlog) {
-    console.log('object');
     blogSwiper = new Swiper('.blogSwiper', {
       spaceBetween: 25,
       slidesPerView: 'auto',
@@ -439,7 +437,7 @@ const featureDetailCards = document.querySelectorAll(
 );
 
 const changeImgUrl = (e) => {
-  if (e.matches) {
+  if (e.matches && featureDetailCards) {
     featureDetailCards[0].src = 'https://source.unsplash.com/random/375x236';
     featureDetailCards[1].src = 'https://source.unsplash.com/random/375x236';
     featureDetailCards[2].src = 'https://source.unsplash.com/random/375x236';
@@ -450,7 +448,29 @@ const changeImgUrl = (e) => {
   }
 };
 
-if (featureDetailCards) {
+if (featureDetailCards.length > 0) {
   featureDetailCardQuery.addEventListener('change', changeImgUrl);
   changeImgUrl(featureDetailCardQuery);
+}
+
+//****************** */
+
+const accordionItems = document.querySelectorAll('.accordion__item');
+
+const toggleAccordionBody = (e) => {
+  let target = e.currentTarget;
+  if (!target.classList.contains('active')) {
+    accordionItems.forEach((item) => {
+      item.classList.remove('active');
+    });
+    target.classList.toggle('active');
+  } else {
+    target.classList.remove('active');
+  }
+};
+
+if (accordionItems !== null) {
+  accordionItems.forEach((item) => {
+    item.addEventListener('click', (e) => toggleAccordionBody(e));
+  });
 }
