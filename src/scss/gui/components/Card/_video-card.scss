@@ -1,16 +1,38 @@
-.video-card {
+.slider-video-card {
   $self: &;
   a {
-    background-image: radial-gradient(
-      circle at 48% 55%,
-      rgba(32, 46, 62, 0),
-      $primary-dark-blue-level-0 96%
-    );
-    max-height: 402px;
+    display: block;
+    height: 402px;
+    width: 100%;
     position: relative;
 
-    #{$self}__img {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       width: 100%;
+      background-image: radial-gradient(
+        circle at 48% 55%,
+        rgba(32, 46, 62, 0),
+        $primary-dark-blue-level-0 96%
+      );
+    }
+
+    #{$self}__img {
+      max-width: 1440px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
     }
 
     #{$self}__icon {

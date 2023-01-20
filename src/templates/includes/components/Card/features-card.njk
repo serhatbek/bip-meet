@@ -1,5 +1,5 @@
-{% macro item(img, title, desc, class) %}
-  <div class="features-card{%- if class %} {{ class }}{%- endif %}">
+{% macro item(img, title, href, desc, class) %}
+  <a href="{{ href }}" class="features-card{%- if class %} {{ class }}{%- endif %}">
     <figure>
       <img src="{{ img }}" alt="{{ title }}">
     </figure>
@@ -7,5 +7,5 @@
       <h4>{{ title }}</h4>
       <p>{{ desc }}</p>
     </div>
-  </div>
+  </a>
 {% endmacro %}

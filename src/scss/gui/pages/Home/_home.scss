@@ -86,7 +86,9 @@
   background-color: $bg;
 
   .swiper {
-    padding: 38px 0;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 46px;
 
     .swiper-pagination {
       bottom: 0 !important;
@@ -94,26 +96,6 @@
 
     .swiper-pagination-bullet {
       border: 1px solid $primary-blue;
-    }
-  }
-}
-
-.video-item {
-  background-image: url(../assets/images/videos-bg-1.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-size: cover;
-  height: 402px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  figure {
-    height: 70px;
-    width: 70px;
-
-    img {
-      width: 100%;
     }
   }
 }
