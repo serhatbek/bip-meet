@@ -1,3 +1,26 @@
 {% extends "includes/layout/layout.njk" %}
+{% import "includes/components/Card/banner-card.njk" as BannerCard with context %}
+{% import "includes/components/Button/button.njk" as Button %}
 
-{% block content %}{% endblock %}
+{% set bannerItems = {
+  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+  btnTextOne: 'Yazıyı Oku',
+  btnLink: '/',
+  img: 'https://source.unsplash.com/random/672x448'
+}
+ %}
+
+{% block content %}
+  <section class="section page-videos section-banner--split section-banner">
+    <div class="container container__wide">
+      {% call BannerCard.item(title = bannerItems.title, desc = bannerItems.desc, img = bannerItems.img) %}
+      {{Button.item(
+          text= bannerItems.btnTextOne,
+          href= bannerItems.btnLink,
+          class= 'button--sm'
+        )}}
+      {% endcall %}
+    </div>
+  </section>
+{% endblock %}
