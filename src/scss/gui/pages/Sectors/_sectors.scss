@@ -7,3 +7,61 @@
     }
   }
 }
+
+.page-sectors.section-sectors {
+  .box {
+    margin-top: 122px;
+
+    .common-card:not(:last-child) {
+      margin-bottom: 46px;
+    }
+
+    .common-card--small:nth-child(odd) figure {
+      order: 1;
+    }
+
+    .common-card--small:nth-child(odd) > div {
+      order: 2;
+    }
+
+    .common-card--small:nth-child(even) figure {
+      order: 2;
+    }
+
+    .common-card--small:nth-child(even) > div {
+      order: 1;
+    }
+
+    @include laptop {
+      margin-top: 77px;
+
+      .common-card--small:nth-child(even) {
+        figure {
+          order: 2;
+          margin-right: 0;
+        }
+
+        > div {
+          order: 1;
+        }
+      }
+
+      .common-card--small:nth-child(odd) {
+        figure {
+          order: 2;
+          margin-right: 0;
+        }
+
+        > div {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  .tab-sector__content article {
+    @include laptop {
+      margin-top: 48px;
+    }
+  }
+}

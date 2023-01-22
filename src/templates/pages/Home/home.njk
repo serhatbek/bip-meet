@@ -467,9 +467,8 @@
   <section class="section section-sectors">
     <h2 class='section__title text-center'>{{ sectorsItems.heading }}</h2>
     <div class="container">
-      {{SectorsTab.item(
-        data=sectorsItems
-      )}}
+      {% call SectorsTab.item(data = sectorsItems) %}
+      {% endcall %}
     </div>
   </section>
 

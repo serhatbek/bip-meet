@@ -2,6 +2,7 @@
 {% import "includes/components/Slider/slider-banner.njk" as SliderBanner %}
 {% import "includes/components/Card/common-card.njk" as CommonCard %}
 {% import "includes/components/Tab/tab-sectors.njk" as SectorsTab %}
+{% import "includes/components/Slider/slider-testimonial.njk" as SliderTestimonial %}
 
 {% set bannerItems = [
   {
@@ -25,12 +26,383 @@
   }
 ] %}
 
+{% set sectorsItems = {
+  heading:'Sektörler',
+  tabButtons: [
+    {
+      text:'Kamu',
+      class:'button--mid swiper-slide',
+      attr:'data-tab-target=public'
+    },
+        {
+      text:'Sağlık',
+      class:'button--mid swiper-slide active',
+      attr:'data-tab-target=health'
+    },
+        {
+      text:'Yerel Yönetim',
+      class:'button--mid swiper-slide',
+      attr:'data-tab-target=gov'
+    },
+        {
+      text:'Eğitim',
+      class:'button--mid swiper-slide',
+      attr:'data-tab-target=edu'
+    },
+        {
+      text:'Kurumsal Firmalar',
+      class:'button--mid swiper-slide',
+      attr:'data-tab-target=firm'
+    }
+  ],
+  tabContents: [
+    {
+      class:'active',
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Gorem ipsum dolor sit met, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+      id:'public',
+      specialsTitle:'Lorem ipsum dolor bazı önemli özellikler',
+      speacials: [
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        }
+      ],
+      refItems: [
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
+    },
+      {
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Borem ipsum dolor sit let, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+      id:'health',
+      specialsTitle:'Lorem ipsum dolor bazı önemli özellikler',
+      speacials: [
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        }
+      ],
+      refItems: [
+          {
+        title:'Milli Kitap Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Kitap Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Kitap Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Kitap Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Kitap Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Kitap Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
+    },
+        {
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Yorem ipsum dolor sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+      id:'gov',
+      specialsTitle:'Lorem ipsum dolor bazı önemli özellikler',
+      speacials: [
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        }
+      ],
+      refItems: [
+          {
+        title:'Milli Sanat Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Sanat Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Sanat Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Sanat Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Sanat Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Sanat Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
+    },
+        {
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Lorem ipsum dolor sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+      id:'edu',
+      specialsTitle:'Lorem ipsum dolor bazı önemli özellikler',
+      speacials: [
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        }
+      ],
+      refItems: [
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
+    },
+        {
+      img:'https://source.unsplash.com/random/552x402',
+      title:'Lorem ipsum dolor sit amet, consectetur adip',
+      desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+      id:'firm',
+      specialsTitle:'Lorem ipsum dolor bazı önemli özellikler',
+      speacials: [
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        },
+        {
+        title:'Öğrencilerle Kesintisiz İletişim',
+        img:'https://source.unsplash.com/random/552x236',
+        desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+        class:'common-card--small'
+        }
+      ],
+      refItems: [
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        },
+          {
+        title:'Milli Eğitim Bakanlığı',
+        img:'https://source.unsplash.com/random/76x76',
+        class:'swiper-slide'
+        }
+      ]
+    }
+  ]
+
+} %}
+
+{% set testimonialItems = [
+  {
+    heading: 'Lorem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }, {
+    heading: 'Norem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Korem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }, {
+    heading: 'Sorem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Dorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }, {
+    heading: 'Gorem ipsum dolor sit amet, consectetur adip',
+    img: 'https://source.unsplash.com/random/147x193',
+    desc: 'Borem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    topicon: '../assets/images/sathu1.png',
+    bottomicon: '../assets/images/sathu2.png'
+  }
+] %}
+
 {% block content %}
   <section class="section section-banner--split page-sectors section-banner">
     <div class="container container__wide">
       {{SliderBanner.item(
           data= bannerItems
         )}}
+    </div>
+  </section>
+
+  <section class="section page-sectors section-sectors">
+    <h2 class='section__title text-center'>{{ sectorsItems.heading }}</h2>
+    <div class="container">
+      {{SectorsTab.item(data = sectorsItems)}}
+    </div>
+  </section>
+
+  <section class="section page-sectors section-testimonial">
+    <div class="container">
+      {{SliderTestimonial.item(testimonialData= testimonialItems)}}
     </div>
   </section>
 {% endblock %}
