@@ -1,7 +1,10 @@
-{% macro item(img, title, desc, href, class) %}
+{% macro item(img, title, desc, href, class, icon, cardV2) %}
   <a href="{{ href }}" class="blog-card{%- if class %} {{ class }}{%- endif %}">
     <figure>
       <img src="{{ img }}" alt="{{ title }}">
+      {% if cardV2 %}
+        <img class="icon" src="{{ icon }}">
+      {% endif %}
     </figure>
     <div class="blog-card__content">
       <h4>{{ title }}</h4>

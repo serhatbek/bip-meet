@@ -1,6 +1,7 @@
 {% extends "includes/layout/layout.njk" %}
 {% import "includes/components/Card/banner-card.njk" as BannerCard with context %}
 {% import "includes/components/Button/button.njk" as Button %}
+{% import "includes/components/Card/blog-card.njk" as BlogCard %}
 
 {% set bannerItems = {
   title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -8,8 +9,54 @@
   btnTextOne: 'Yazıyı Oku',
   btnLink: '/',
   img: 'https://source.unsplash.com/random/672x448'
-}
- %}
+} %}
+
+{% set blogItems = [
+  {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide',
+    link:'/',
+    icon: '../assets/images/icons8-play-button-circled-100.png'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide',
+    link:'/',
+    icon: '../assets/images/icons8-play-button-circled-100.png'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide',
+    link:'/',
+    icon: '../assets/images/icons8-play-button-circled-100.png'
+  },
+  {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide',
+    link:'/',
+    icon: '../assets/images/icons8-play-button-circled-100.png'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide',
+    link:'/',
+    icon: '../assets/images/icons8-play-button-circled-100.png'
+  }, {
+    img: 'https://source.unsplash.com/random/332x288',
+    title: 'Lorem ipsum dolor sit amet, consectetur adip',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, agna. Lorem ipsum dolor sit amet.',
+    class:'swiper-slide',
+    link:'/',
+    icon: '../assets/images/icons8-play-button-circled-100.png'
+  }
+] %}
 
 {% block content %}
   <section class="section page-videos section-banner--split section-banner">
@@ -21,6 +68,24 @@
           class= 'button--sm'
         )}}
       {% endcall %}
+    </div>
+  </section>
+
+  <section class="section page-videos section-blog">
+    <div class="container">
+      <div class="box">
+        {% for item in blogItems %}
+          {{BlogCard.item(
+          img=item.img,
+          title=item.title,
+          desc=item.desc,
+          href=item.link,
+          icon=item.icon,
+          cardV2='true'
+        )}}
+
+        {% endfor %}
+      </div>
     </div>
   </section>
 {% endblock %}
