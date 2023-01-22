@@ -1,0 +1,25 @@
+.page-sss.section-sss {
+  padding-top: 65px;
+  > h1 {
+    margin-bottom: 24px;
+  }
+
+  > p {
+    max-width: 662px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 auto 46px auto;
+  }
+
+  .container {
+    article {
+      padding-bottom: 24px;
+      &:not(:first-child) {
+        padding-top: 24px;
+      }
+      .section__title {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
