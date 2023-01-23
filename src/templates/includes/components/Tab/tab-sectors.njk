@@ -4,7 +4,7 @@
 
 {% macro item(data) %}
   <div class="tab-sector">
-    <div class="tab-sector__header">
+    <div class="tab-sector__header{%- if data.tabHeader %} {{ data.tabHeader }}{%- endif %}">
       <div class="swiper sectorsTabSlider">
         <div class="swiper-wrapper">
           {% for item in data.tabButtons %}

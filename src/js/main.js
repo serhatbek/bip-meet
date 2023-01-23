@@ -27,7 +27,7 @@ const toggleMenu = () => {
     header.classList.remove('active');
     menuToggleIcon.src = '../assets/images/icons-menu-open.png';
     headerBtns.forEach((btn) => btn.classList.remove('button--lg'));
-    body.classList.remove('overflowHidden');
+    // body.classList.remove('overflowHidden');
   } else {
     body.classList.add('overflowHidden');
     headerNav.classList.add('active');
@@ -48,7 +48,6 @@ if (dropdownBtns) {
       if (!target.classList.contains('active')) {
         dropdownBtns.forEach((item) => {
           item.classList.remove('active');
-          // body.classList.add('overflowHidden');
         });
         target.classList.add('active');
         navOverlay.classList.add('active');
@@ -77,6 +76,16 @@ window.addEventListener('scroll', () => {
     header.classList.add('header--sticky');
   } else {
     header.classList.remove('header--sticky');
+  }
+});
+
+const stickyTabHeader = document.querySelector('.tab-sector__header.sticky');
+
+window.addEventListener('scroll', () => {
+  if (stickyTabHeader.classList.contains('sticky') && window.scrollY > 700) {
+    stickyTabHeader.classList.add('tab-sector__header--sticky');
+  } else {
+    stickyTabHeader.classList.remove('tab-sector__header--sticky');
   }
 });
 

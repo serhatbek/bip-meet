@@ -4,6 +4,8 @@
 {% import "includes/components/Tab/tab-sectors.njk" as SectorsTab %}
 {% import "includes/components/Slider/slider-testimonial.njk" as SliderTestimonial %}
 
+{% set HeaderClass = 'sticky' %}
+
 {% set bannerItems = [
   {
     heading: 'Her sektör için video etkileşimi',
@@ -28,6 +30,7 @@
 
 {% set sectorsItems = {
   heading:'Sektörler',
+  tabHeader:'sticky',
   tabButtons: [
     {
       text:'Kamu',
